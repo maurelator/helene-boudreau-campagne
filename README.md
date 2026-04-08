@@ -1,4 +1,4 @@
-# 🗳️ Site Campagne — Hélène Boudreau · Dieppe 2025
+# 🗳️ Site Campagne — Hélène Boudreau · Dieppe 2026
 ## Guide complet d'installation et de déploiement
 
 ---
