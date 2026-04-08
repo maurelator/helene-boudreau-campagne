@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "about": "About",
+    "programme": "Platform",
+    "distinction": "Awards",
+    "community": "Community",
+    "newcomers": "Dieppe for All",
+    "volunteer": "Volunteers",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Municipal Election · Dieppe 2025",
+    "role": "Candidate for City Council — District 4",
+    "slogan": "Dieppe, built on trust.",
+    "sub": "A strong community starts with representation rooted in experience, listening, and action.",
+    "cta_prog": "See the Platform",
+    "cta_vol": "Join the Campaign"
+  },
+  "about": {
+    "eyebrow": "About Hélène",
+    "title": "A life dedicated\nto her community",
+    "p1": "Hélène Boudreau has been a registered nurse for over 22 years and a committed resident of Dieppe. Her professional journey has taught her the importance of listening, rigour, and compassion — values she naturally brings to her civic engagement.",
+    "p2": "A volunteer with the Carnaval de l'Amitié, the Aquatic Centre, and Chair of the Maison Nazareth Board of Directors, she knows intimately the strengths and challenges of our region.",
+    "tag1": "Nurse · 22 years of experience",
+    "tag2": "Board Chair — Maison Nazareth",
+    "tag3": "Community volunteer",
+    "tag4": "Accessibility advocate",
+    "years_num": "22+",
+    "years_label": "Years serving\nour community"
+  },
+  "distinction": {
+    "eyebrow": "Recognition",
+    "title": "Woman of the Year",
+    "p": "Hélène Boudreau was honoured with the Woman of the Year award for her exceptional commitment to the Dieppe community. This distinction reflects a remarkable journey of service, combining leadership, dedication, and concrete impact on citizens' lives.",
+    "quote": "True leadership means being there — before, during, and after."
+  },
+  "programme": {
+    "eyebrow": "Electoral Platform",
+    "title": "Concrete priorities\nfor Dieppe",
+    "items": [
+      {
+        "num": "01",
+        "title": "Safety",
+        "text": "Strengthen community policing, modernize emergency equipment, and secure public spaces for everyone."
+      },
+      {
+        "num": "02",
+        "title": "Housing",
+        "text": "Accelerate construction of affordable housing, revise zoning policies, and support homeownership for families."
+      },
+      {
+        "num": "03",
+        "title": "Transportation",
+        "text": "Develop a modern public transit network and promote sustainable mobility across Greater Moncton."
+      },
+      {
+        "num": "04",
+        "title": "Environment",
+        "text": "Protect green spaces, modernize water and sewer infrastructure, and build a sustainable city for future generations."
+      },
+      {
+        "num": "05",
+        "title": "Accessibility",
+        "text": "Ensure that public spaces and municipal services are fully accessible to people with special needs."
+      },
+      {
+        "num": "06",
+        "title": "Communication",
+        "text": "Create a citizen forum to keep residents informed about neighbourhood projects and strengthen council–citizen dialogue."
+      }
+    ]
+  },
+  "newcomers": {
+    "eyebrow": "Welcome & Inclusion",
+    "title": "Dieppe for All",
+    "sub": "Because a strong city is an open city.",
+    "p1": "Dieppe is one of the fastest-growing cities in Atlantic Canada, largely thanks to its newcomers. Hélène Boudreau is committed to building bridges, facilitating integration, and ensuring every resident feels at home.",
+    "p2": "Her commitments: multilingual access to services, support for settlement organizations, and equitable representation on city council.",
+    "actions": [
+      "Multilingual municipal services",
+      "Partnerships with settlement agencies",
+      "Inclusive representation on council",
+      "Community mentorship programs"
+    ]
+  },
+  "community": {
+    "eyebrow": "Community Engagement",
+    "title": "Actions,\nnot just words",
+    "sub": "Years of presence on the ground, alongside the residents of Dieppe."
+  },
+  "volunteer": {
+    "eyebrow": "Join the Campaign",
+    "title": "Your involvement\nmakes a difference",
+    "sub": "Hélène Boudreau's campaign relies on passionate volunteers. Join the team — every contribution counts.",
+    "roles": [
+      { "title": "Phone Banking", "desc": "Contact voters from the comfort of your home" },
+      { "title": "Door-to-Door", "desc": "Meet residents in their neighbourhoods" },
+      { "title": "Campaign Office", "desc": "Administrative and logistical support" },
+      { "title": "Events", "desc": "Help organize and animate campaign activities" }
+    ],
+    "form": {
+      "fname": "First Name",
+      "lname": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "role": "Availability",
+      "role_placeholder": "Choose a role...",
+      "message": "Message (optional)",
+      "submit": "I'm In",
+      "success": "Thank you! We will be in touch very soon."
+    }
+  },
+  "news": {
+    "eyebrow": "News",
+    "title": "Follow the Campaign",
+    "empty": "No news yet. Check back soon!"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Write to Us",
+    "address": "Dieppe, New Brunswick",
+    "email": "dieppevotehelene@gmail.com",
+    "phone": "Coming soon",
+    "form": {
+      "fname": "First Name",
+      "lname": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "financed": "Paid for by the Hélène Boudreau campaign committee — Dieppe, N.B."
+  }
+}

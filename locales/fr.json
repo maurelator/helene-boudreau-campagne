@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "about": "À propos",
+    "programme": "Programme",
+    "distinction": "Distinctions",
+    "community": "Engagement",
+    "newcomers": "Dieppe pour tous",
+    "volunteer": "Bénévoles",
+    "news": "Actualités",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Élection municipale · Dieppe 2025",
+    "role": "Candidate au conseil municipal — District 4",
+    "slogan": "Dieppe, bâtie sur la confiance.",
+    "sub": "Une communauté forte commence par une représentation ancrée dans l'expérience, l'écoute et l'action.",
+    "cta_prog": "Voir le programme",
+    "cta_vol": "Rejoindre la campagne"
+  },
+  "about": {
+    "eyebrow": "À propos d'Hélène",
+    "title": "Une vie au service\nde sa communauté",
+    "p1": "Hélène Boudreau est infirmière depuis plus de 22 ans et résidente engagée de Dieppe. Son parcours professionnel lui a appris l'importance de l'écoute, de la rigueur et de la compassion — des valeurs qu'elle transpose naturellement dans son engagement civique.",
+    "p2": "Bénévole au sein du Carnaval de l'Amitié, du Centre aquatique et présidente du conseil d'administration de la Maison Nazareth, elle connaît intimement les forces et les défis de notre région.",
+    "tag1": "Infirmière · 22 ans d'expérience",
+    "tag2": "Présidente C.A. — Maison Nazareth",
+    "tag3": "Bénévole communautaire",
+    "tag4": "Défense de l'accessibilité",
+    "years_num": "22+",
+    "years_label": "Ans au service\nde notre communauté"
+  },
+  "distinction": {
+    "eyebrow": "Reconnaissances",
+    "title": "Femme de l'année",
+    "p": "Hélène Boudreau a été honorée du titre de Femme de l'année pour son engagement exceptionnel au sein de la communauté de Dieppe. Cette distinction témoigne d'un parcours remarquable au service des autres, alliant leadership, dévouement et impact concret sur la vie des citoyens.",
+    "quote": "Le vrai leadership, c'est d'être là — avant, pendant et après."
+  },
+  "programme": {
+    "eyebrow": "Programme électoral",
+    "title": "Des priorités\nconcrètes pour Dieppe",
+    "items": [
+      {
+        "num": "01",
+        "title": "Sécurité",
+        "text": "Renforcer la présence de proximité, moderniser les équipements d'urgence et sécuriser les espaces publics pour toutes et tous."
+      },
+      {
+        "num": "02",
+        "title": "Logement",
+        "text": "Accélérer la construction de logements abordables, réviser le zonage et soutenir l'accès à la propriété pour les familles."
+      },
+      {
+        "num": "03",
+        "title": "Transport",
+        "text": "Développer un réseau de transport collectif moderne et encourager la mobilité durable dans tout le Grand Moncton."
+      },
+      {
+        "num": "04",
+        "title": "Environnement",
+        "text": "Protéger nos espaces verts, moderniser les infrastructures d'eau et d'égouts, et bâtir une ville durable pour les générations futures."
+      },
+      {
+        "num": "05",
+        "title": "Accessibilité",
+        "text": "Garantir que les lieux publics et les services municipaux soient pleinement accessibles aux personnes à besoins spéciaux."
+      },
+      {
+        "num": "06",
+        "title": "Communication",
+        "text": "Créer un forum citoyen pour tenir la population informée des projets du quartier et renforcer le dialogue élu–citoyen."
+      }
+    ]
+  },
+  "newcomers": {
+    "eyebrow": "Accueil et inclusion",
+    "title": "Dieppe pour tous",
+    "sub": "Parce qu'une ville forte est une ville ouverte.",
+    "p1": "Dieppe est l'une des villes à la croissance la plus rapide du Canada atlantique, en grande partie grâce à ses nouveaux arrivants. Hélène Boudreau s'engage à construire des ponts, à faciliter l'intégration et à faire en sorte que chaque résident se sente chez lui.",
+    "p2": "Ses engagements : accès aux services en plusieurs langues, soutien aux organismes d'intégration, et représentation équitable au conseil municipal.",
+    "actions": [
+      "Services municipaux multilingues",
+      "Partenariats avec les organismes d'accueil",
+      "Représentation inclusive au conseil",
+      "Programmes de mentorat communautaire"
+    ]
+  },
+  "community": {
+    "eyebrow": "Engagement communautaire",
+    "title": "Des actes,\npas que des mots",
+    "sub": "Des années de présence sur le terrain, aux côtés des citoyens de Dieppe."
+  },
+  "volunteer": {
+    "eyebrow": "Rejoindre la campagne",
+    "title": "Votre implication\nfait la différence",
+    "sub": "La campagne d'Hélène Boudreau repose sur des bénévoles passionnés. Rejoignez l'équipe — chaque contribution compte.",
+    "roles": [
+      { "title": "Appels téléphoniques", "desc": "Contacter les électeurs depuis chez vous" },
+      { "title": "Porte-à-porte", "desc": "Rencontrer les résidents dans les quartiers" },
+      { "title": "Bureau de campagne", "desc": "Soutien administratif et logistique" },
+      { "title": "Événements", "desc": "Animation et organisation d'activités" }
+    ],
+    "form": {
+      "fname": "Prénom",
+      "lname": "Nom",
+      "email": "Courriel",
+      "phone": "Téléphone",
+      "role": "Disponibilité",
+      "role_placeholder": "Choisir un rôle...",
+      "message": "Message (optionnel)",
+      "submit": "Je m'engage",
+      "success": "Merci ! Nous vous contacterons très bientôt."
+    }
+  },
+  "news": {
+    "eyebrow": "Actualités",
+    "title": "Suivez la campagne",
+    "empty": "Aucune actualité pour le moment. Revenez bientôt !"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Écrivez-nous",
+    "address": "Dieppe, Nouveau-Brunswick",
+    "email": "dieppevotehelene@gmail.com",
+    "phone": "À venir",
+    "form": {
+      "fname": "Prénom",
+      "lname": "Nom",
+      "email": "Courriel",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "financed": "Financé par le comité de campagne d'Hélène Boudreau — Dieppe, N.-B."
+  }
+}

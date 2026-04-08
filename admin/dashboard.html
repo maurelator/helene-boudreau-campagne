@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Campagne Hélène Boudreau</title>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:#1b3a2d; --forest-mid:#245038; --forest-light:#306647; --forest-pale:#4a8c63;
+  --night:#0f1e2b; --night-mid:#172635;
+  --slate:#3d4f5c; --silver:#e8eaec; --cream:#f5f3ef;
+  --text:#1a2830; --muted:#7a8f9a;
+  --sidebar:260px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish',sans-serif;background:#eef0ec;display:flex;min-height:100vh;color:var(--text);}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar);background:var(--night);position:fixed;top:0;left:0;bottom:0;z-index:100;display:flex;flex-direction:column;border-right:1px solid rgba(74,140,99,0.15);}
+.s-logo{padding:1.8rem 1.5rem 1.4rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.s-logo-name{font-size:0.98rem;color:#fff;font-weight:400;}
+.s-logo-name em{font-style:italic;color:#7fbfa0;}
+.s-logo-sub{font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-top:3px;}
+.s-nav{flex:1;padding:1.2rem 0.7rem;display:flex;flex-direction:column;gap:2px;overflow-y:auto;}
+.s-section{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);padding:0.6rem 0.8rem;margin-top:0.8rem;}
+.s-item{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 0.9rem;border-radius:6px;font-size:0.82rem;color:rgba(255,255,255,0.5);cursor:pointer;transition:all 0.2s;border:none;background:none;width:100%;text-align:left;}
+.s-item:hover{background:rgba(255,255,255,0.05);color:#fff;}
+.s-item.active{background:rgba(74,140,99,0.18);color:#a8d4b8;}
+.badge{margin-left:auto;background:#8a2236;color:#fff;font-size:0.6rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:100px;min-width:18px;text-align:center;}
+.s-footer{padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.05);}
+.s-logout{display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;padding:0.4rem;transition:color 0.2s;}
+.s-logout:hover{color:#f87c87;}
+
+/* MAIN */
+.main{margin-left:var(--sidebar);flex:1;display:flex;flex-direction:column;}
+.topbar{background:#fff;padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e0dbd4;box-shadow:0 2px 8px rgba(15,30,43,0.05);}
+.topbar-title{font-size:1rem;font-weight:600;color:var(--night);}
+.topbar-meta{font-size:0.75rem;color:var(--muted);}
+.topbar-right{display:flex;align-items:center;gap:1rem;}
+.view-site{font-size:0.73rem;color:var(--muted);text-decoration:none;padding:0.4rem 0.8rem;border:1px solid #ddd;border-radius:4px;transition:all 0.2s;}
+.view-site:hover{border-color:var(--forest-pale);color:var(--forest);}
+.avatar{width:34px;height:34px;border-radius:6px;background:linear-gradient(135deg,var(--forest),var(--night-mid));display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.75rem;font-weight:700;}
+.content{padding:2.5rem;flex:1;}
+
+/* PANELS */
+.panel{display:none;}
+.panel.active{display:block;}
+
+/* STAT CARDS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:2.5rem;}
+.stat-card{background:#fff;border-radius:10px;padding:1.4rem 1.6rem;border:1px solid #e8e2d8;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 8px rgba(15,30,43,0.04);}
+.stat-ico{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.stat-ico.g{background:rgba(27,58,45,0.1);color:var(--forest-mid);}
+.stat-ico.s{background:rgba(61,79,92,0.1);color:var(--slate);}
+.stat-ico.r{background:rgba(107,26,42,0.1);color:#8a2236;}
+.stat-ico.b{background:rgba(15,30,43,0.08);color:var(--night-mid);}
+.stat-n{font-size:1.7rem;font-weight:700;color:var(--night);line-height:1;}
+.stat-l{font-size:0.7rem;color:var(--muted);margin-top:0.2rem;}
+
+/* CARDS */
+.card{background:#fff;border-radius:10px;border:1px solid #e8e2d8;overflow:hidden;margin-bottom:2rem;box-shadow:0 2px 8px rgba(15,30,43,0.04);}
+.card-head{padding:1.1rem 1.6rem;border-bottom:1px solid #f0ece6;display:flex;align-items:center;justify-content:space-between;}
+.card-title{font-size:0.9rem;font-weight:600;color:var(--night);}
+.btn-add{background:var(--forest);color:#fff;padding:0.48rem 1rem;border-radius:5px;font-size:0.72rem;font-weight:600;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:0.35rem;transition:background 0.2s;letter-spacing:0.05em;}
+.btn-add:hover{background:var(--forest-mid);}
+.btn-add.slate{background:var(--slate);}
+.btn-add.slate:hover{background:#546070;}
+.btn-add.amber{background:#b8902a;}
+.btn-add.amber:hover{background:#9a7820;}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;}
+thead th{padding:0.8rem 1.4rem;text-align:left;font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);background:#faf8f5;border-bottom:1px solid #f0ece6;}
+tbody td{padding:0.95rem 1.4rem;font-size:0.84rem;color:#2a3a48;border-bottom:1px solid #f5f2ed;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:#faf8f5;}
+.tag{display:inline-block;padding:0.2rem 0.65rem;border-radius:100px;font-size:0.66rem;font-weight:600;}
+.tag.g{background:rgba(27,58,45,0.1);color:var(--forest-mid);}
+.tag.r{background:rgba(107,26,42,0.1);color:#8a2236;}
+.tag.a{background:rgba(184,144,42,0.12);color:#8a6a10;}
+.tag.gr{background:#f0ece6;color:#6a6055;}
+.act{display:flex;gap:0.45rem;}
+.btn-s{padding:0.3rem 0.7rem;border-radius:4px;font-size:0.68rem;border:none;cursor:pointer;transition:all 0.2s;font-family:'Mulish',sans-serif;font-weight:600;}
+.btn-s.g{background:rgba(27,58,45,0.1);color:var(--forest-mid);}
+.btn-s.g:hover{background:var(--forest-mid);color:#fff;}
+.btn-s.r{background:rgba(107,26,42,0.1);color:#8a2236;}
+.btn-s.r:hover{background:#8a2236;color:#fff;}
+.dot{width:7px;height:7px;background:#c0392b;border-radius:50%;display:inline-block;margin-right:5px;}
+.empty{text-align:center;padding:3rem;color:var(--muted);font-size:0.88rem;}
+
+/* FORMS */
+.form-sec{padding:1.8rem;border-bottom:1px solid #f0ece6;background:#faf8f5;display:none;}
+.form-row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.fld{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+.fld label{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.fld input,.fld textarea,.fld select{padding:0.82rem 0.95rem;border:1.5px solid #ddd8d0;border-radius:6px;font-size:0.88rem;font-family:'Mulish',sans-serif;color:var(--text);background:#fff;outline:none;transition:border-color 0.2s;}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--forest-pale);}
+.fld textarea{resize:vertical;min-height:110px;}
+.btn-save{background:var(--forest-mid);color:#fff;padding:0.78rem 1.8rem;border-radius:6px;font-size:0.8rem;font-weight:600;border:none;cursor:pointer;transition:background 0.2s;}
+.btn-save:hover{background:var(--forest);}
+.btn-cancel{background:#f0ece6;color:#6a6055;padding:0.78rem 1.2rem;border-radius:6px;font-size:0.8rem;border:none;cursor:pointer;margin-left:0.6rem;transition:background 0.2s;}
+.btn-cancel:hover{background:#e8e2d8;}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;z-index:999;background:var(--night);color:#fff;padding:0.9rem 1.4rem;border-radius:8px;font-size:0.83rem;box-shadow:0 8px 28px rgba(0,0,0,0.25);border-left:3px solid var(--forest-pale);opacity:0;transform:translateY(8px);transition:all 0.3s;pointer-events:none;}
+.toast.show{opacity:1;transform:translateY(0);}
+
+/* UPLOAD ZONE */
+.upload-zone{border:2px dashed #ddd8d0;border-radius:8px;padding:2rem;text-align:center;cursor:pointer;transition:border-color 0.2s;background:#fff;}
+.upload-zone:hover{border-color:var(--forest-pale);}
+.upload-zone input{display:none;}
+.upload-zone-text{font-size:0.82rem;color:var(--muted);margin-top:0.5rem;}
+.upload-preview{max-width:200px;max-height:120px;border-radius:6px;margin-top:0.8rem;}
+
+@media(max-width:900px){
+  .sidebar{width:60px;overflow:hidden;}
+  .s-logo,.s-section,.s-item span,.s-logout span,.s-logo-sub{display:none;}
+  .main{margin-left:60px;}
+  .stats{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="s-logo">
+    <div class="s-logo-name">Hélène <em>Boudreau</em></div>
+    <div class="s-logo-sub">Administration</div>
+  </div>
+  <nav class="s-nav">
+    <div class="s-section">Tableau de bord</div>
+    <button class="s-item active" onclick="show('dashboard')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Vue d'ensemble</span>
+    </button>
+    <div class="s-section">Contenu</div>
+    <button class="s-item" onclick="show('actualites')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span>Actualités</span>
+    </button>
+    <button class="s-item" onclick="show('galerie')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Galerie photos</span>
+    </button>
+    <button class="s-item" onclick="show('config')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      <span>Paramètres</span>
+    </button>
+    <div class="s-section">Engagement</div>
+    <button class="s-item" onclick="show('benevoles')" id="navBen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <span>Bénévoles</span>
+      <span class="badge" id="bdgBen" style="display:none">0</span>
+    </button>
+    <button class="s-item" onclick="show('messages')" id="navMsg">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span>Messages</span>
+      <span class="badge" id="bdgMsg" style="display:none">0</span>
+    </button>
+  </nav>
+  <div class="s-footer">
+    <a href="/admin/logout" class="s-logout">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+      <span>Déconnexion</span>
+    </a>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div>
+      <div class="topbar-title" id="ttl">Vue d'ensemble</div>
+      <div class="topbar-meta" id="tmt">Tableau de bord de la campagne</div>
+    </div>
+    <div class="topbar-right">
+      <a href="/" target="_blank" class="view-site">Voir le site</a>
+      <div class="avatar">HB</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div id="panel-dashboard" class="panel active">
+      <div class="stats">
+        <div class="stat-card"><div class="stat-ico g"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div><div><div class="stat-n" id="s1">—</div><div class="stat-l">Actualités</div></div></div>
+        <div class="stat-card"><div class="stat-ico s"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div><div class="stat-n" id="s2">—</div><div class="stat-l">Photos galerie</div></div></div>
+        <div class="stat-card"><div class="stat-ico g"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><div class="stat-n" id="s3">—</div><div class="stat-l">Bénévoles inscrits</div></div></div>
+        <div class="stat-card"><div class="stat-ico r"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg></div><div><div class="stat-n" id="s4">—</div><div class="stat-l">Messages non lus</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">Actions rapides</div></div>
+        <div style="padding:1.4rem;display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <button class="btn-add" onclick="show('actualites');setTimeout(()=>toggleForm('fActu'),150)">+ Nouvelle actualité</button>
+          <button class="btn-add slate" onclick="show('galerie');setTimeout(()=>toggleForm('fGal'),150)">+ Ajouter une photo</button>
+          <button class="btn-add amber" onclick="show('benevoles')">Voir les bénévoles</button>
+          <button class="btn-add slate" onclick="show('messages')">Voir les messages</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTUALITÉS -->
+    <div id="panel-actualites" class="panel">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Actualités de campagne</div>
+          <button class="btn-add" onclick="toggleForm('fActu')">+ Nouvelle actualité</button>
+        </div>
+        <div class="form-sec" id="fActu">
+          <div class="form-row2">
+            <div class="fld"><label>Titre</label><input type="text" id="aTitle" placeholder="Titre de l'article"></div>
+            <div class="fld"><label>Date</label><input type="date" id="aDate"></div>
+          </div>
+          <div class="fld"><label>Contenu</label><textarea id="aContent" placeholder="Texte de l'actualité..."></textarea></div>
+          <div class="form-row2">
+            <div class="fld">
+              <label>Image</label>
+              <div class="upload-zone" onclick="document.getElementById('aImgFile').click()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <div class="upload-zone-text">Cliquer pour téléverser une image</div>
+                <img id="aImgPreview" class="upload-preview" style="display:none">
+                <input type="file" id="aImgFile" accept="image/*" onchange="previewImg(this,'aImgPreview')">
+              </div>
+              <input type="text" id="aImgUrl" placeholder="ou URL de l'image..." style="margin-top:0.5rem;">
+            </div>
+            <div class="fld"><label>Statut</label><select id="aVisible"><option value="true">Visible sur le site</option><option value="false">Brouillon</option></select></div>
+          </div>
+          <button class="btn-save" onclick="saveActu()">Enregistrer</button>
+          <button class="btn-cancel" onclick="toggleForm('fActu')">Annuler</button>
+        </div>
+        <table>
+          <thead><tr><th>Titre</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead>
+          <tbody id="tbActu"><tr><td colspan="4" class="empty">Chargement...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GALERIE -->
+    <div id="panel-galerie" class="panel">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Galerie — Engagement communautaire</div>
+          <button class="btn-add" onclick="toggleForm('fGal')">+ Ajouter une photo</button>
+        </div>
+        <div class="form-sec" id="fGal">
+          <div class="form-row2">
+            <div class="fld"><label>Titre</label><input type="text" id="gTitle" placeholder="Ex: Carnaval de l'Amitié 2024"></div>
+            <div class="fld"><label>Légende</label><input type="text" id="gLegend" placeholder="Description courte"></div>
+          </div>
+          <div class="fld">
+            <label>Photo</label>
+            <div class="upload-zone" onclick="document.getElementById('gImgFile').click()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <div class="upload-zone-text">Cliquer pour téléverser (max 8 Mo)</div>
+              <img id="gImgPreview" class="upload-preview" style="display:none">
+              <input type="file" id="gImgFile" accept="image/*" onchange="previewImg(this,'gImgPreview')">
+            </div>
+          </div>
+          <button class="btn-save" onclick="saveGal()">Ajouter à la galerie</button>
+          <button class="btn-cancel" onclick="toggleForm('fGal')">Annuler</button>
+        </div>
+        <table>
+          <thead><tr><th>Aperçu</th><th>Titre</th><th>Légende</th><th>Date</th><th>Actions</th></tr></thead>
+          <tbody id="tbGal"><tr><td colspan="5" class="empty">Chargement...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BÉNÉVOLES -->
+    <div id="panel-benevoles" class="panel">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Inscriptions bénévoles</div>
+          <button class="btn-add amber" onclick="exportCSV('benevoles')">Exporter CSV</button>
+        </div>
+        <table>
+          <thead><tr><th>Nom</th><th>Courriel</th><th>Téléphone</th><th>Rôle</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead>
+          <tbody id="tbBen"><tr><td colspan="7" class="empty">Chargement...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MESSAGES -->
+    <div id="panel-messages" class="panel">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Messages de contact</div>
+          <button class="btn-add amber" onclick="exportCSV('messages')">Exporter CSV</button>
+        </div>
+        <table>
+          <thead><tr><th>Nom</th><th>Sujet</th><th>Message</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead>
+          <tbody id="tbMsg"><tr><td colspan="6" class="empty">Chargement...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PARAMÈTRES -->
+    <div id="panel-config" class="panel">
+      <div class="card">
+        <div class="card-head"><div class="card-title">Paramètres du site</div></div>
+        <div style="padding:2rem;max-width:700px;">
+          <div class="form-row2">
+            <div class="fld"><label>Slogan (FR)</label><input type="text" id="cSloganFR"></div>
+            <div class="fld"><label>Slogan (EN)</label><input type="text" id="cSloganEN"></div>
+          </div>
+          <div class="form-row2">
+            <div class="fld"><label>Courriel de contact</label><input type="email" id="cEmail"></div>
+            <div class="fld"><label>Téléphone</label><input type="text" id="cTel"></div>
+          </div>
+          <div class="form-row2">
+            <div class="fld"><label>Facebook</label><input type="text" id="cFB"></div>
+            <div class="fld"><label>Instagram</label><input type="text" id="cIG"></div>
+          </div>
+          <div class="fld">
+            <label>Photo de la candidate</label>
+            <div class="upload-zone" onclick="document.getElementById('cPhotoFile').click()">
+              <img id="cPhotoPreview" class="upload-preview" style="display:none">
+              <div class="upload-zone-text">Cliquer pour téléverser la photo officielle</div>
+              <input type="file" id="cPhotoFile" accept="image/*" onchange="uploadPhoto(this)">
+            </div>
+          </div>
+          <button class="btn-save" onclick="saveConfig()">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const META = {
+  dashboard:  ['Vue d\'ensemble', 'Tableau de bord'],
+  actualites: ['Actualités', 'Gérer les articles'],
+  galerie:    ['Galerie photos', 'Photos et événements communautaires'],
+  benevoles:  ['Bénévoles', 'Inscriptions reçues'],
+  messages:   ['Messages', 'Formulaires de contact'],
+  config:     ['Paramètres', 'Configuration du site']
+};
+
+function show(name) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.s-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  document.getElementById('ttl').textContent = META[name][0];
+  document.getElementById('tmt').textContent = META[name][1];
+  if(name==='dashboard')  loadStats();
+  if(name==='actualites') loadActu();
+  if(name==='galerie')    loadGal();
+  if(name==='benevoles')  loadBen();
+  if(name==='messages')   loadMsg();
+  if(name==='config')     loadConfig();
+}
+
+function toast(msg, type='ok') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.borderLeftColor = type==='ok' ? '#4a8c63' : '#c0392b';
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+function toggleForm(id) {
+  const f = document.getElementById(id);
+  f.style.display = f.style.display==='none'||!f.style.display ? 'block' : 'none';
+}
+
+function previewImg(input, previewId) {
+  const file = input.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById(previewId);
+    img.src = e.target.result; img.style.display='block';
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── Stats ────────────────────────────────
+async function loadStats() {
+  const d = await fetch('/admin/api/stats').then(r=>r.json());
+  document.getElementById('s1').textContent = d.actualites;
+  const galR = await fetch('/admin/api/galerie').then(r=>r.json());
+  document.getElementById('s2').textContent = galR.length;
+  document.getElementById('s3').textContent = d.benevoles;
+  document.getElementById('s4').textContent = d.nonLusMsg + d.nonLusBen;
+  const bb = document.getElementById('bdgBen');
+  const bm = document.getElementById('bdgMsg');
+  bb.textContent=d.nonLusBen; bb.style.display=d.nonLusBen>0?'':'none';
+  bm.textContent=d.nonLusMsg; bm.style.display=d.nonLusMsg>0?'':'none';
+}
+
+// ── Actualités ───────────────────────────
+async function loadActu() {
+  const data = await fetch('/admin/api/actualites').then(r=>r.json());
+  const tb = document.getElementById('tbActu');
+  if(!data.length){tb.innerHTML='<tr><td colspan="4" class="empty">Aucune actualité pour l\'instant.</td></tr>';return;}
+  tb.innerHTML = data.sort((a,b)=>b.date.localeCompare(a.date)).map(a=>`
+    <tr>
+      <td>${a.titre}</td>
+      <td>${a.date}</td>
+      <td><span class="tag ${a.visible?'g':'gr'}">${a.visible?'Visible':'Brouillon'}</span></td>
+      <td class="act"><button class="btn-s r" onclick="delActu(${a.id})">Supprimer</button></td>
+    </tr>`).join('');
+}
+
+async function saveActu() {
+  const fd = new FormData();
+  fd.append('titre',   document.getElementById('aTitle').value);
+  fd.append('date',    document.getElementById('aDate').value || new Date().toISOString().split('T')[0]);
+  fd.append('contenu', document.getElementById('aContent').value);
+  fd.append('visible', document.getElementById('aVisible').value);
+  const imgFile = document.getElementById('aImgFile').files[0];
+  const imgUrl  = document.getElementById('aImgUrl').value;
+  if(imgFile) fd.append('image', imgFile);
+  else if(imgUrl) fd.append('image', imgUrl);
+  if(!fd.get('titre')){toast('Le titre est requis.','err');return;}
+  await fetch('/admin/api/actualites',{method:'POST',body:fd});
+  toast('Actualité enregistrée !'); toggleForm('fActu'); loadActu();
+}
+
+async function delActu(id){
+  if(!confirm('Supprimer ?')) return;
+  await fetch(`/admin/api/actualites/${id}`,{method:'DELETE'});
+  toast('Supprimé.'); loadActu();
+}
+
+// ── Galerie ──────────────────────────────
+async function loadGal() {
+  const data = await fetch('/admin/api/galerie').then(r=>r.json());
+  const tb = document.getElementById('tbGal');
+  if(!data.length){tb.innerHTML='<tr><td colspan="5" class="empty">Aucune photo pour l\'instant.</td></tr>';return;}
+  tb.innerHTML = data.map(g=>`
+    <tr>
+      <td>${g.image?`<img src="${g.image}" style="width:60px;height:40px;object-fit:cover;border-radius:4px;">`:'—'}</td>
+      <td>${g.titre||'—'}</td>
+      <td>${g.legende||'—'}</td>
+      <td>${g.date}</td>
+      <td class="act"><button class="btn-s r" onclick="delGal(${g.id})">Supprimer</button></td>
+    </tr>`).join('');
+}
+
+async function saveGal() {
+  const fd = new FormData();
+  fd.append('titre',   document.getElementById('gTitle').value);
+  fd.append('legende', document.getElementById('gLegend').value);
+  const imgFile = document.getElementById('gImgFile').files[0];
+  if(!imgFile){toast('Une photo est requise.','err');return;}
+  fd.append('image', imgFile);
+  await fetch('/admin/api/galerie',{method:'POST',body:fd});
+  toast('Photo ajoutée !'); toggleForm('fGal'); loadGal();
+}
+
+async function delGal(id){
+  if(!confirm('Supprimer cette photo ?')) return;
+  await fetch(`/admin/api/galerie/${id}`,{method:'DELETE'});
+  toast('Supprimée.'); loadGal();
+}
+
+// ── Bénévoles ────────────────────────────
+async function loadBen() {
+  const data = await fetch('/admin/api/benevoles').then(r=>r.json());
+  const tb = document.getElementById('tbBen');
+  if(!data.length){tb.innerHTML='<tr><td colspan="7" class="empty">Aucun bénévole inscrit.</td></tr>';return;}
+  tb.innerHTML = data.sort((a,b)=>b.date.localeCompare(a.date)).map(b=>`
+    <tr>
+      <td>${b.lu?'':'<span class="dot"></span>'}<strong>${b.nom}</strong></td>
+      <td><a href="mailto:${b.email}" style="color:var(--forest-mid);">${b.email}</a></td>
+      <td>${b.phone||'—'}</td>
+      <td><span class="tag a">${b.role||'—'}</span></td>
+      <td>${b.date}</td>
+      <td><span class="tag ${b.lu?'gr':'r'}">${b.lu?'Lu':'Nouveau'}</span></td>
+      <td class="act">
+        ${!b.lu?`<button class="btn-s g" onclick="luBen(${b.id})">Marquer lu</button>`:''}
+        <button class="btn-s r" onclick="delBen(${b.id})">Suppr.</button>
+      </td>
+    </tr>`).join('');
+}
+
+async function luBen(id){await fetch(`/admin/api/benevoles/${id}/lu`,{method:'PUT'});toast('Marqué lu.');loadBen();loadStats();}
+async function delBen(id){if(!confirm('Supprimer ?'))return;await fetch(`/admin/api/benevoles/${id}`,{method:'DELETE'});toast('Supprimé.');loadBen();}
+
+// ── Messages ─────────────────────────────
+async function loadMsg() {
+  const data = await fetch('/admin/api/messages').then(r=>r.json());
+  const tb = document.getElementById('tbMsg');
+  if(!data.length){tb.innerHTML='<tr><td colspan="6" class="empty">Aucun message.</td></tr>';return;}
+  tb.innerHTML = data.sort((a,b)=>b.date.localeCompare(a.date)).map(m=>`
+    <tr>
+      <td>${m.lu?'':'<span class="dot"></span>'}<strong>${m.nom}</strong><br><small style="color:var(--muted)">${m.email}</small></td>
+      <td><span class="tag a">${m.sujet}</span></td>
+      <td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${m.message}</td>
+      <td>${m.date}</td>
+      <td><span class="tag ${m.lu?'gr':'r'}">${m.lu?'Lu':'Nouveau'}</span></td>
+      <td class="act">
+        ${!m.lu?`<button class="btn-s g" onclick="luMsg(${m.id})">Marquer lu</button>`:''}
+        <button class="btn-s r" onclick="delMsg(${m.id})">Suppr.</button>
+      </td>
+    </tr>`).join('');
+}
+
+async function luMsg(id){await fetch(`/admin/api/messages/${id}/lu`,{method:'PUT'});toast('Marqué lu.');loadMsg();loadStats();}
+async function delMsg(id){if(!confirm('Supprimer ?'))return;await fetch(`/admin/api/messages/${id}`,{method:'DELETE'});toast('Supprimé.');loadMsg();}
+
+// ── Config ───────────────────────────────
+async function loadConfig() {
+  const d = await fetch('/admin/api/config').then(r=>r.json());
+  document.getElementById('cSloganFR').value = d.slogan_fr||'';
+  document.getElementById('cSloganEN').value = d.slogan_en||'';
+  document.getElementById('cEmail').value    = d.email_contact||'';
+  document.getElementById('cTel').value      = d.telephone||'';
+  document.getElementById('cFB').value       = d.facebook||'';
+  document.getElementById('cIG').value       = d.instagram||'';
+  if(d.photo_candidate){
+    const p = document.getElementById('cPhotoPreview');
+    p.src = d.photo_candidate; p.style.display='block';
+  }
+}
+
+async function saveConfig() {
+  const body = {
+    slogan_fr:      document.getElementById('cSloganFR').value,
+    slogan_en:      document.getElementById('cSloganEN').value,
+    email_contact:  document.getElementById('cEmail').value,
+    telephone:      document.getElementById('cTel').value,
+    facebook:       document.getElementById('cFB').value,
+    instagram:      document.getElementById('cIG').value,
+  };
+  await fetch('/admin/api/config',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  toast('Paramètres sauvegardés !');
+}
+
+async function uploadPhoto(input) {
+  const fd = new FormData(); fd.append('photo', input.files[0]);
+  const r = await fetch('/admin/api/upload-photo',{method:'POST',body:fd}).then(x=>x.json());
+  if(r.success){
+    previewImg(input,'cPhotoPreview');
+    toast('Photo téléversée ! Rechargez le site.');
+  }
+}
+
+// ── CSV Export ───────────────────────────
+async function exportCSV(type) {
+  const data = await fetch(`/admin/api/${type}`).then(r=>r.json());
+  if(!data.length){toast('Aucune donnée.','err');return;}
+  const keys = Object.keys(data[0]);
+  const csv  = [keys.join(','),...data.map(r=>keys.map(k=>`"${String(r[k]||'').replace(/"/g,'""')}"`).join(','))].join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download = `${type}-${new Date().toISOString().split('T')[0]}.csv`;
+  a.click(); toast(`Export téléchargé.`);
+}
+
+loadStats();
+</script>
+</body>
+</html>
