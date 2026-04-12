@@ -1,21 +1,27 @@
 {
   "nav": {
+    "home": "Accueil",
+    "communaute": "Communauté",
     "about": "À propos",
-    "programme": "Programme",
+    "programme": "Plateforme",
     "distinction": "Distinctions",
     "community": "Engagement",
-    "newcomers": "Dieppe pour tous",
+    "newcomers": "Enjeux",
     "volunteer": "Bénévoles",
     "news": "Actualités",
-    "contact": "Contact"
+    "contact": "Contact",
+    "vote": "Comment voter",
+    "don": "Faire un don"
   },
   "hero": {
-    "badge": "Élection municipale · Dieppe 2025",
+    "badge": "Élection municipale · Dieppe 2026",
     "role": "Candidate au conseil municipal — District 4",
     "slogan": "Dieppe, bâtie sur la confiance.",
     "sub": "Une communauté forte commence par une représentation ancrée dans l'expérience, l'écoute et l'action.",
-    "cta_prog": "Voir le programme",
-    "cta_vol": "Rejoindre la campagne"
+    "cta_prog": "Voir la plateforme",
+    "cta_vol": "Rejoindre la campagne",
+    "cta_don": "Faire un don",
+    "cta_pancarte": "Demander une pancarte"
   },
   "about": {
     "eyebrow": "À propos d'Hélène",
@@ -36,7 +42,7 @@
     "quote": "Le vrai leadership, c'est d'être là — avant, pendant et après."
   },
   "programme": {
-    "eyebrow": "Programme électoral",
+    "eyebrow": "Plateforme électorale",
     "title": "Des priorités\nconcrètes pour Dieppe",
     "items": [
       {
@@ -72,8 +78,8 @@
     ]
   },
   "newcomers": {
-    "eyebrow": "Accueil et inclusion",
-    "title": "Dieppe pour tous",
+    "eyebrow": "Enjeux prioritaires",
+    "title": "Enjeux",
     "sub": "Parce qu'une ville forte est une ville ouverte.",
     "p1": "Dieppe est l'une des villes à la croissance la plus rapide du Canada atlantique, en grande partie grâce à ses nouveaux arrivants. Hélène Boudreau s'engage à construire des ponts, à faciliter l'intégration et à faire en sorte que chaque résident se sente chez lui.",
     "p2": "Ses engagements : accès aux services en plusieurs langues, soutien aux organismes d'intégration, et représentation équitable au conseil municipal.",
@@ -121,7 +127,7 @@
     "title": "Écrivez-nous",
     "address": "Dieppe, Nouveau-Brunswick",
     "email": "dieppevotehelene@gmail.com",
-    "phone": "À venir",
+    "phone": "506-480-1367",
     "form": {
       "fname": "Prénom",
       "lname": "Nom",
@@ -133,6 +139,43 @@
   },
   "footer": {
     "rights": "Tous droits réservés.",
-    "financed": "Financé par le comité de campagne d'Hélène Boudreau — Dieppe, N.-B."
+    "financed": "Financé par le comité de campagne d'Hélène Boudreau — Dieppe, N.-B. 2026"
+  },
+  "vote": {
+    "page_title": "Information sur le vote — Hélène Boudreau, Dieppe 2026",
+    "hero_h1_a": "Votre voix",
+    "hero_h1_em": "compte",
+    "hero_sub": "Découvrez qui peut voter aux élections municipales de Dieppe 2026 et comment vous inscrire sur la liste électorale.",
+    "who_title": "Qui peut voter ?",
+    "who_card1_h": "Critères d'admissibilité",
+    "who_card1_p": "Pour voter aux élections municipales de Dieppe, vous devez :",
+    "who_card1_li1": "Être citoyen(ne) canadien(ne)",
+    "who_card1_li2": "Avoir au moins 18 ans le jour du scrutin",
+    "who_card1_li3": "Résider dans la municipalité de Dieppe depuis au moins 40 jours avant le jour du scrutin",
+    "who_card1_li4": "Posséder une pièce d'identité requise",
+    "who_card1_link": "Consulter la liste des pièces d'identité acceptées",
+    "who_card2_h": "Informations municipales",
+    "who_card2_p": "Pour plus d'informations sur les exigences spécifiques à Dieppe et aux élections municipales au Nouveau-Brunswick :",
+    "who_card2_link": "Guide des élections municipales — Gouvernement du N.-B.",
+    "how_title": "Comment voter ?",
+    "how_card1_h": "1. Vérifiez votre inscription",
+    "how_card1_p": "Assurez-vous d'être inscrit sur la liste électorale avant le jour du scrutin. Si vous n'êtes pas inscrit, vous pouvez le faire en personne au bureau des élections ou en ligne.",
+    "how_card1_link": "Vérifier ou modifier votre inscription",
+    "how_card2_h": "2. Préparez votre pièce d'identité",
+    "how_card2_p": "Le jour du vote, vous devrez présenter une pièce d'identité avec photo et adresse, ou deux pièces d'identité sans photo dont une indique votre adresse actuelle.",
+    "how_card3_h": "3. Rendez-vous à votre bureau de vote",
+    "how_card3_p": "Vous recevrez une carte d'information de l'électeur indiquant où et quand voter. Les bureaux de vote sont généralement ouverts de 10h à 20h le jour du scrutin.",
+    "how_card4_h": "Vote par anticipation",
+    "how_card4_p": "Si vous ne pouvez pas voter le jour du scrutin, des bureaux de vote par anticipation seront disponibles. Les dates et lieux seront annoncés officiellement par Élections NB.",
+    "back_btn": "Retour au site principal"
+  },
+  "don": {
+    "page_title": "Faire un don — Hélène Boudreau, Dieppe 2026",
+    "logo": "Hélène Boudreau — Dieppe 2026",
+    "h1_a": "Soutenir la",
+    "h1_em": "campagne",
+    "badge": "Page en préparation",
+    "sub": "Le formulaire de don en ligne sera disponible très prochainement. Merci de votre générosité et de votre soutien à la campagne d'Hélène Boudreau pour le District 4 de Dieppe.",
+    "back_btn": "Retour au site"
   }
 }

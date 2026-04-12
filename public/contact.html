@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contactez l'équipe de campagne d'Hélène Boudreau — Dieppe 2026">
+<title>Contact & Actualités — Hélène Boudreau, Dieppe 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ══ NEWS ═══════════════════════════════════ -->
+<section id="news" class="section">
+  <div class="container">
+    <div class="eyebrow reveal" data-i18n="news.eyebrow">Actualités</div>
+    <h2 class="section-title reveal" data-i18n="news.title">Suivez la campagne</h2>
+    <div class="divider reveal"></div>
+    <div class="news-grid" id="newsGrid">
+      <div class="news-empty" data-i18n="news.empty">Aucune actualité pour le moment. Revenez bientôt !</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="eyebrow reveal" data-i18n="contact.eyebrow">Contact</div>
+    <h2 class="section-title reveal" data-i18n="contact.title">Écrivez-nous</h2>
+    <div class="contact-grid">
+      <div class="reveal from-left">
+        <p class="contact-info-text">Pour toute question, idée ou souhait de vous impliquer, notre équipe vous répondra dans les meilleurs délais.</p>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="contact-item-label">Adresse</div><div class="contact-item-value" data-i18n="contact.address">Dieppe, Nouveau-Brunswick</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="contact-item-label">Courriel</div><div class="contact-item-value" data-i18n="contact.email">dieppevotehelene@gmail.com</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.14 9.81 19.79 19.79 0 011.06 1.18 2 2 0 013.03 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="contact-item-label">Téléphone</div><div class="contact-item-value" data-i18n="contact.phone">506-480-1367</div></div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.facebook.com/share/17TM7ip9wx/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-btn" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="reveal from-right">
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <div class="cf-grid-2">
+            <div class="cf-field"><label data-i18n="contact.form.fname">Prénom</label><input type="text" name="fname" required placeholder="Marie"></div>
+            <div class="cf-field"><label data-i18n="contact.form.lname">Nom</label><input type="text" name="lname" required placeholder="Tremblay"></div>
+          </div>
+          <div class="cf-field"><label data-i18n="contact.form.email">Courriel</label><input type="email" name="email" required placeholder="marie@exemple.ca"></div>
+          <div class="cf-field">
+            <label data-i18n="contact.form.subject">Sujet</label>
+            <select name="subject"><option>Question générale</option><option>Médias</option><option>Don</option><option>Autre</option></select>
+          </div>
+          <div class="cf-field"><label data-i18n="contact.form.message">Message</label><textarea name="message" required placeholder="Votre message..."></textarea></div>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Hélène <em>Boudreau</em></div>
+        <div class="footer-brand-sub">Candidate — District 4, Dieppe 2026</div>
+        <p class="footer-brand-p">Une communauté forte commence par une représentation enracinée dans l'expérience et l'écoute.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="nav.about">À propos</div>
+        <a href="/#about" data-i18n="nav.about">À propos</a>
+        <a href="/communaute.html#distinction" data-i18n="nav.distinction">Distinctions</a>
+        <a href="/communaute.html#community" data-i18n="nav.community">Engagement</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="nav.programme">Plateforme</div>
+        <a href="/#programme" data-i18n="nav.programme">Plateforme</a>
+        <a href="/communaute.html#newcomers" data-i18n="nav.newcomers">Enjeux</a>
+        <a href="/contact.html#news" data-i18n="nav.news">Actualités</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Campagne</div>
+        <a href="/benevoles.html" data-i18n="nav.volunteer">Bénévoles</a>
+        <a href="/contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="mailto:dieppevotehelene@gmail.com">dieppevotehelene@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hélène Boudreau. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+      <a href="https://www.facebook.com/share/17TM7ip9wx/?mibextid=wwXIfr" target="_blank" rel="noopener" class="footer-fb">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Suivre sur Facebook
+      </a>
+      <span data-i18n="footer.financed">Financé par le comité de campagne — Dieppe, N.-B.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──────────────────────────
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── News loader ────────────────────────────
+async function loadNews() {
+  const grid = document.getElementById('newsGrid');
+  const t = window._T?.[window.currentLang || 'fr'];
+  try {
+    const r = await fetch('/api/actualites');
+    if (!r.ok) throw new Error();
+    const items = await r.json();
+    if (!items.length) {
+      grid.innerHTML = `<p class="news-empty">${t?.news?.empty || 'Aucune actualité pour le moment.'}</p>`;
+      return;
+    }
+    grid.innerHTML = items.map(a => `
+      <div class="news-card">
+        ${a.image ? `<img src="${a.image}" alt="${a.titre}" class="news-card-img">` : '<div class="news-card-img"></div>'}
+        <div class="news-card-body">
+          <div class="news-card-date">${a.date}</div>
+          <h3 class="news-card-title">${a.titre}</h3>
+          <p class="news-card-text">${a.contenu.substring(0,120)}...</p>
+        </div>
+      </div>`).join('');
+  } catch {
+    grid.innerHTML = `<p class="news-empty">${t?.news?.empty || 'Aucune actualité pour le moment.'}</p>`;
+  }
+}
+
+// ── Contact form ───────────────────────────
+async function submitContact(e) {
+  e.preventDefault();
+  const inputs = e.target.querySelectorAll('input,select,textarea');
+  const body = {};
+  inputs.forEach(i => { if (i.name) body[i.name] = i.value; });
+  try {
+    await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+  } catch {}
+  e.target.reset();
+  const lang = window.currentLang || 'fr';
+  alert(lang === 'fr' ? 'Message envoyé ! Merci.' : 'Message sent! Thank you.');
+}
+
+// ── Auto-render after lang load ────────────
+(function() {
+  const orig = window.setLang;
+  window.setLang = function(lang) {
+    if (orig) orig(lang);
+    setTimeout(loadNews, 100);
+  };
+  setTimeout(loadNews, 500);
+})();
+</script>
+<script src="/navbar.js"></script>
+</body>
+</html>

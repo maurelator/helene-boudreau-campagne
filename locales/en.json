@@ -1,21 +1,27 @@
 {
   "nav": {
+    "home": "Home",
+    "communaute": "Community",
     "about": "About",
     "programme": "Platform",
     "distinction": "Awards",
     "community": "Community",
-    "newcomers": "Dieppe for All",
+    "newcomers": "Issues",
     "volunteer": "Volunteers",
     "news": "News",
-    "contact": "Contact"
+    "contact": "Contact",
+    "vote": "How to Vote",
+    "don": "Donate"
   },
   "hero": {
-    "badge": "Municipal Election · Dieppe 2025",
+    "badge": "Municipal Election · Dieppe 2026",
     "role": "Candidate for City Council — District 4",
     "slogan": "Dieppe, built on trust.",
     "sub": "A strong community starts with representation rooted in experience, listening, and action.",
     "cta_prog": "See the Platform",
-    "cta_vol": "Join the Campaign"
+    "cta_vol": "Join the Campaign",
+    "cta_don": "Make a Donation",
+    "cta_pancarte": "Request a Sign"
   },
   "about": {
     "eyebrow": "About Hélène",
@@ -72,8 +78,8 @@
     ]
   },
   "newcomers": {
-    "eyebrow": "Welcome & Inclusion",
-    "title": "Dieppe for All",
+    "eyebrow": "Key Issues",
+    "title": "Issues",
     "sub": "Because a strong city is an open city.",
     "p1": "Dieppe is one of the fastest-growing cities in Atlantic Canada, largely thanks to its newcomers. Hélène Boudreau is committed to building bridges, facilitating integration, and ensuring every resident feels at home.",
     "p2": "Her commitments: multilingual access to services, support for settlement organizations, and equitable representation on city council.",
@@ -121,7 +127,7 @@
     "title": "Write to Us",
     "address": "Dieppe, New Brunswick",
     "email": "dieppevotehelene@gmail.com",
-    "phone": "Coming soon",
+    "phone": "506-480-1367",
     "form": {
       "fname": "First Name",
       "lname": "Last Name",
@@ -133,6 +139,43 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "financed": "Paid for by the Hélène Boudreau campaign committee — Dieppe, N.B."
+    "financed": "Paid for by the Hélène Boudreau campaign committee — Dieppe, N.B. 2026"
+  },
+  "vote": {
+    "page_title": "Voter Information — Hélène Boudreau, Dieppe 2026",
+    "hero_h1_a": "Your voice",
+    "hero_h1_em": "matters",
+    "hero_sub": "Find out who can vote in the 2026 Dieppe municipal election and how to register on the electoral list.",
+    "who_title": "Who can vote?",
+    "who_card1_h": "Eligibility Requirements",
+    "who_card1_p": "To vote in Dieppe's municipal election, you must:",
+    "who_card1_li1": "Be a Canadian citizen",
+    "who_card1_li2": "Be at least 18 years old on election day",
+    "who_card1_li3": "Have resided in the City of Dieppe for at least 40 days before election day",
+    "who_card1_li4": "Have the required identification",
+    "who_card1_link": "View accepted forms of identification",
+    "who_card2_h": "Municipal Information",
+    "who_card2_p": "For more information on Dieppe-specific requirements and New Brunswick municipal elections:",
+    "who_card2_link": "Municipal Elections Guide — Government of N.B.",
+    "how_title": "How to vote?",
+    "how_card1_h": "1. Check your registration",
+    "how_card1_p": "Make sure you are registered on the electoral list before election day. If you are not registered, you can do so in person at the elections office or online.",
+    "how_card1_link": "Check or update your registration",
+    "how_card2_h": "2. Prepare your identification",
+    "how_card2_p": "On voting day, you must present a photo ID with your address, or two pieces of identification without a photo, one of which shows your current address.",
+    "how_card3_h": "3. Go to your polling station",
+    "how_card3_p": "You will receive a voter information card indicating where and when to vote. Polling stations are generally open from 10 a.m. to 8 p.m. on election day.",
+    "how_card4_h": "Advance voting",
+    "how_card4_p": "If you cannot vote on election day, advance polling stations will be available. Dates and locations will be officially announced by Elections NB.",
+    "back_btn": "Back to main site"
+  },
+  "don": {
+    "page_title": "Make a Donation — Hélène Boudreau, Dieppe 2026",
+    "logo": "Hélène Boudreau — Dieppe 2026",
+    "h1_a": "Support the",
+    "h1_em": "campaign",
+    "badge": "Coming Soon",
+    "sub": "The online donation form will be available very soon. Thank you for your generosity and support for Hélène Boudreau's campaign for District 4 of Dieppe.",
+    "back_btn": "Back to site"
   }
 }

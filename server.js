@@ -31,7 +31,7 @@ app.use('/locales', express.static(path.join(__dirname, 'locales')));
 app.use('/admin/assets', express.static(path.join(__dirname, 'admin')));
 
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'helene-dieppe-2025-secret',
+  secret: process.env.SESSION_SECRET || 'helene-dieppe-2026-secret',
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 * 8 }
@@ -57,5 +57,5 @@ app.listen(PORT, () => {
   console.log(`\n ✅  Serveur démarré`);
   console.log(` 🌐  Site public  →  http://localhost:${PORT}`);
   console.log(` 🔐  Admin        →  http://localhost:${PORT}/admin`);
-  console.log(`\n     Login: admin / dieppe2025\n`);
+  console.log(`\n     Login: admin / dieppe2026\n`);
 });

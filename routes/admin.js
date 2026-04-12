@@ -20,7 +20,7 @@ const write = data  => fs.writeFileSync(DB, JSON.stringify(data, null, 2));
 const newId = arr   => arr.length ? Math.max(...arr.map(i => i.id)) + 1 : 1;
 
 const ADMIN_USER = process.env.ADMIN_USER || 'admin';
-const ADMIN_PASS = process.env.ADMIN_PASS || 'dieppe2025';
+const ADMIN_PASS = process.env.ADMIN_PASS || 'dieppe2026';
 
 function auth(req, res, next) {
   if (req.session?.admin) return next();

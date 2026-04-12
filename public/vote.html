@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="vote.page_title">Information sur le vote — Hélène Boudreau, Dieppe 2026</title>
+<meta name="description" content="Comment voter aux élections municipales de Dieppe 2026. Qui peut voter et comment s'inscrire sur la liste électorale.">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Mulish:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:       #1a2d4a;
+  --forest-mid:   #1e3a5f;
+  --forest-light: #2a5080;
+  --forest-pale:  #4a7aaa;
+  --night:        #0f1e2b;
+  --night-mid:    #172635;
+  --white:        #ffffff;
+  --cream:        #f0f2f5;
+  --warm:         #f5f6fa;
+  --text:         #1a2830;
+  --text-mid:     #3d4f5c;
+  --text-muted:   #7a8f9a;
+  --font-display: 'Spectral', Georgia, serif;
+  --font-body:    'Mulish', system-ui, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--warm);
+  color: var(--text);
+  padding-top: 6rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.hero-vote {
+  background: linear-gradient(135deg, var(--night) 0%, var(--night-mid) 50%, var(--forest) 100%);
+  padding: 6rem 0 5rem;
+  text-align: center;
+  color: #fff;
+}
+.hero-vote-icon {
+  width: 72px; height: 72px; margin: 0 auto 2rem;
+  background: rgba(168,200,232,0.15);
+  border: 2px solid rgba(168,200,232,0.35);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #a8c8e8;
+}
+.hero-vote h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.hero-vote h1 em {
+  font-style: italic;
+  color: #a8c8e8;
+  display: block;
+}
+.hero-vote p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.content-section {
+  padding: 5rem 0;
+}
+.content-section:nth-child(even) {
+  background: #fff;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 400;
+  color: var(--night);
+  margin-bottom: 1rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--forest-pale);
+}
+.divider {
+  width: 50px;
+  height: 3px;
+  background: var(--forest-pale);
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(26,45,74,0.12);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(15,30,43,0.06);
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--night);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.card h3::before {
+  content: '';
+  width: 6px;
+  height: 28px;
+  background: var(--forest-pale);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.card p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin-bottom: 1.5rem;
+}
+.card ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.card li {
+  font-size: 0.98rem;
+  color: var(--text-mid);
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--forest);
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(26,45,74,0.3);
+}
+.btn-primary:hover {
+  background: var(--forest-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(26,45,74,0.4);
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--forest-pale);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.external-link:hover {
+  color: var(--forest);
+}
+
+.footer-vote {
+  background: var(--night);
+  padding: 3rem 0;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.85rem;
+}
+.footer-vote a {
+  color: #a8c8e8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-vote a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  .content-section { padding: 3.5rem 0; }
+  .card { padding: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<section class="hero-vote">
+  <div class="container">
+    <div class="hero-vote-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 11l3 3L22 4"/>
+        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+      </svg>
+    </div>
+    <h1><span data-i18n="vote.hero_h1_a">Votre voix</span> <em data-i18n="vote.hero_h1_em">compte</em></h1>
+    <p data-i18n="vote.hero_sub">Découvrez qui peut voter aux élections municipales de Dieppe 2026 et comment vous inscrire sur la liste électorale.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2 class="section-title" data-i18n="vote.who_title">Qui peut <em>voter</em> ?</h2>
+    <div class="divider"></div>
+
+    <div class="card">
+      <h3 data-i18n="vote.who_card1_h">Critères d'admissibilité</h3>
+      <p data-i18n="vote.who_card1_p">Pour voter aux élections municipales de Dieppe, vous devez :</p>
+      <ul>
+        <li data-i18n="vote.who_card1_li1">Être citoyen(ne) canadien(ne)</li>
+        <li data-i18n="vote.who_card1_li2">Avoir au moins 18 ans le jour du scrutin</li>
+        <li data-i18n="vote.who_card1_li3">Résider dans la municipalité de Dieppe depuis au moins 40 jours avant le jour du scrutin</li>
+        <li data-i18n="vote.who_card1_li4">Posséder une pièce d'identité requise</li>
+      </ul>
+      <p>
+        <a href="https://www.electionsnb.ca/content/enb/fr/electeurs/identite_requises.html" target="_blank" rel="noopener" class="external-link">
+          <span data-i18n="vote.who_card1_link">Consulter la liste des pièces d'identité acceptées</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="vote.who_card2_h">Informations municipales</h3>
+      <p data-i18n="vote.who_card2_p">Pour plus d'informations sur les exigences spécifiques à Dieppe et aux élections municipales au Nouveau-Brunswick :</p>
+      <p>
+        <a href="https://www1.gnb.ca/Elections/fr/munstreetkey/munskinformation-f.asp" target="_blank" rel="noopener" class="external-link">
+          <span data-i18n="vote.who_card2_link">Guide des élections municipales — Gouvernement du N.-B.</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2 class="section-title" data-i18n="vote.how_title">Comment <em>voter</em> ?</h2>
+    <div class="divider"></div>
+
+    <div class="card">
+      <h3 data-i18n="vote.how_card1_h">1. Vérifiez votre inscription</h3>
+      <p data-i18n="vote.how_card1_p">Assurez-vous d'être inscrit sur la liste électorale avant le jour du scrutin. Si vous n'êtes pas inscrit, vous pouvez le faire en personne au bureau des élections ou en ligne.</p>
+      <p>
+        <a href="https://www.electionsnb.ca/content/enb/fr/electeurs/liste-electorale.html" target="_blank" rel="noopener" class="external-link">
+          <span data-i18n="vote.how_card1_link">Vérifier ou modifier votre inscription</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="vote.how_card2_h">2. Préparez votre pièce d'identité</h3>
+      <p data-i18n="vote.how_card2_p">Le jour du vote, vous devrez présenter une pièce d'identité avec photo et adresse, ou deux pièces d'identité sans photo dont une indique votre adresse actuelle.</p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="vote.how_card3_h">3. Rendez-vous à votre bureau de vote</h3>
+      <p data-i18n="vote.how_card3_p">Vous recevrez une carte d'information de l'électeur indiquant où et quand voter. Les bureaux de vote sont généralement ouverts de 10h à 20h le jour du scrutin.</p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="vote.how_card4_h">Vote par anticipation</h3>
+      <p data-i18n="vote.how_card4_p">Si vous ne pouvez pas voter le jour du scrutin, des bureaux de vote par anticipation seront disponibles. Les dates et lieux seront annoncés officiellement par Élections NB.</p>
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="/" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-i18n="vote.back_btn">Retour au site principal</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-vote">
+  <div class="container">
+    <p>© 2026 Hélène Boudreau — Candidate au conseil municipal de Dieppe, District 4</p>
+    <p style="margin-top:0.5rem;">
+      <a href="https://www.facebook.com/share/17TM7ip9wx/?mibextid=wwXIfr" target="_blank" rel="noopener">Suivre sur Facebook</a>
+      ·
+      <a href="mailto:dieppevotehelene@gmail.com">dieppevotehelene@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+<script src="/navbar.js"></script>
+</body>
+</html>

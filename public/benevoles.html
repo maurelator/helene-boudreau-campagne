@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rejoindre la campagne d'Hélène Boudreau — Bénévoles Dieppe 2026">
+<title>Bénévoles — Hélène Boudreau, Dieppe 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ══ VOLUNTEER ══════════════════════════════ -->
+<section id="volunteer" class="section">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="eyebrow reveal" data-i18n="volunteer.eyebrow">Rejoindre la campagne</div>
+    <h2 class="section-title reveal" data-i18n="volunteer.title">Votre implication\nfait la différence</h2>
+    <p class="vol-sub reveal" data-i18n="volunteer.sub">La campagne d'Hélène Boudreau repose sur des bénévoles passionnés...</p>
+
+    <div class="vol-roles reveal" id="volRoles"><!-- Injected by JS --></div>
+
+    <div class="vol-form-wrap reveal" id="volFormWrap">
+      <p class="vol-form-title" data-i18n="volunteer.form.submit">Je m'engage dans la campagne</p>
+      <form id="volForm" onsubmit="submitVolunteer(event)">
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label data-i18n="volunteer.form.fname">Prénom</label>
+            <input type="text" name="fname" required placeholder="Marie">
+          </div>
+          <div class="form-field">
+            <label data-i18n="volunteer.form.lname">Nom</label>
+            <input type="text" name="lname" required placeholder="Tremblay">
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label data-i18n="volunteer.form.email">Courriel</label>
+            <input type="email" name="email" required placeholder="marie@exemple.ca">
+          </div>
+          <div class="form-field">
+            <label data-i18n="volunteer.form.phone">Téléphone</label>
+            <input type="tel" name="phone" placeholder="506-555-0000">
+          </div>
+        </div>
+        <div class="form-field">
+          <label data-i18n="volunteer.form.role">Disponibilité</label>
+          <select name="role" id="volRoleSelect">
+            <option value="" disabled selected data-i18n="volunteer.form.role_placeholder">Choisir un rôle...</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label data-i18n="volunteer.form.message">Message (optionnel)</label>
+          <textarea name="message" placeholder="Dites-nous comment vous souhaitez aider..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-slate" style="width:100%;justify-content:center;" data-i18n="volunteer.form.submit">Je m'engage</button>
+      </form>
+      <div class="vol-form-success" id="volSuccess" data-i18n="volunteer.form.success">
+        Merci ! Nous vous contacterons très bientôt.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Hélène <em>Boudreau</em></div>
+        <div class="footer-brand-sub">Candidate — District 4, Dieppe 2026</div>
+        <p class="footer-brand-p">Une communauté forte commence par une représentation enracinée dans l'expérience et l'écoute.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="nav.about">À propos</div>
+        <a href="/#about" data-i18n="nav.about">À propos</a>
+        <a href="/communaute.html#distinction" data-i18n="nav.distinction">Distinctions</a>
+        <a href="/communaute.html#community" data-i18n="nav.community">Engagement</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="nav.programme">Plateforme</div>
+        <a href="/#programme" data-i18n="nav.programme">Plateforme</a>
+        <a href="/communaute.html#newcomers" data-i18n="nav.newcomers">Enjeux</a>
+        <a href="/contact.html#news" data-i18n="nav.news">Actualités</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Campagne</div>
+        <a href="/benevoles.html" data-i18n="nav.volunteer">Bénévoles</a>
+        <a href="/contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="mailto:dieppevotehelene@gmail.com">dieppevotehelene@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hélène Boudreau. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+      <a href="https://www.facebook.com/share/17TM7ip9wx/?mibextid=wwXIfr" target="_blank" rel="noopener" class="footer-fb">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Suivre sur Facebook
+      </a>
+      <span data-i18n="footer.financed">Financé par le comité de campagne — Dieppe, N.-B.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──────────────────────────
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── Render volunteer roles ─────────────────
+function renderVolRoles() {
+  const roles = window._T?.[window.currentLang || 'fr']?.volunteer?.roles;
+  if (!Array.isArray(roles)) return;
+  const volIcons = [
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.14 9.81 19.79 19.79 0 011.06 1.18 2 2 0 013.03 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>'
+  ];
+  document.getElementById('volRoles').innerHTML = roles.map((r, i) => `
+    <div class="vol-role">
+      <div class="vol-role-icon">${volIcons[i]}</div>
+      <div class="vol-role-title">${r.title}</div>
+      <div class="vol-role-desc">${r.desc}</div>
+    </div>`).join('');
+
+  // Populate role select
+  const t = window._T?.[window.currentLang || 'fr'];
+  const sel = document.getElementById('volRoleSelect');
+  sel.innerHTML = `<option value="" disabled selected>${t?.volunteer?.form?.role_placeholder || 'Choisir un rôle...'}</option>` +
+    roles.map(r => `<option value="${r.title}">${r.title}</option>`).join('');
+}
+
+// ── Volunteer form submit ──────────────────
+async function submitVolunteer(e) {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const body = Object.fromEntries(fd.entries());
+  try {
+    await fetch('/api/benevole', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    });
+  } catch {}
+  document.getElementById('volForm').style.display = 'none';
+  document.getElementById('volSuccess').style.display = 'block';
+}
+
+// ── Auto-render after lang load ────────────
+(function() {
+  const orig = window.setLang;
+  window.setLang = function(lang) {
+    if (orig) orig(lang);
+    setTimeout(renderVolRoles, 100);
+  };
+  setTimeout(renderVolRoles, 500);
+})();
+</script>
+<script src="/navbar.js"></script>
+</body>
+</html>
