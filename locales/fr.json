@@ -15,7 +15,7 @@
   },
   "hero": {
     "badge": "Élection municipale · Dieppe 2026",
-    "role": "Candidate au conseil municipal — District 4",
+    "role": "Candidate à la mairie de Dieppe",
     "slogan": "Dieppe, bâtie sur la confiance.",
     "sub": "Une communauté forte commence par une représentation ancrée dans l'expérience, l'écoute et l'action.",
     "cta_prog": "Voir la plateforme",
@@ -47,33 +47,27 @@
     "items": [
       {
         "num": "01",
-        "title": "Sécurité",
-        "text": "Renforcer la présence de proximité, moderniser les équipements d'urgence et sécuriser les espaces publics pour toutes et tous."
+        "title": "Dieppe en Action",
+        "text": "Contenu à venir — Hélène Boudreau partagera sa vision pour une Dieppe dynamique et engagée.",
+        "link": "/dieppe-en-action.html"
       },
       {
         "num": "02",
-        "title": "Logement",
-        "text": "Accélérer la construction de logements abordables, réviser le zonage et soutenir l'accès à la propriété pour les familles."
+        "title": "Dieppe en Santé",
+        "text": "Contenu à venir — Des engagements concrets pour le mieux-être et la santé des résidents de Dieppe.",
+        "link": "/dieppe-en-sante.html"
       },
       {
         "num": "03",
-        "title": "Transport",
-        "text": "Développer un réseau de transport collectif moderne et encourager la mobilité durable dans tout le Grand Moncton."
+        "title": "Dieppe en Évolution",
+        "text": "Contenu à venir — Une vision moderne et ambitieuse pour l'avenir de notre communauté.",
+        "link": "/dieppe-en-evolution.html"
       },
       {
         "num": "04",
-        "title": "Environnement",
-        "text": "Protéger nos espaces verts, moderniser les infrastructures d'eau et d'égouts, et bâtir une ville durable pour les générations futures."
-      },
-      {
-        "num": "05",
-        "title": "Accessibilité",
-        "text": "Garantir que les lieux publics et les services municipaux soient pleinement accessibles aux personnes à besoins spéciaux."
-      },
-      {
-        "num": "06",
-        "title": "Communication",
-        "text": "Créer un forum citoyen pour tenir la population informée des projets du quartier et renforcer le dialogue élu–citoyen."
+        "title": "Logement",
+        "text": "Accélérer la construction de logements abordables, réviser le zonage et soutenir l'accès à la propriété pour les familles.",
+        "link": "/logement.html"
       }
     ]
   },
@@ -175,7 +169,7 @@
     "h1_a": "Soutenir la",
     "h1_em": "campagne",
     "badge": "Page en préparation",
-    "sub": "Le formulaire de don en ligne sera disponible très prochainement. Merci de votre générosité et de votre soutien à la campagne d'Hélène Boudreau pour le District 4 de Dieppe.",
+    "sub": "Le formulaire de don en ligne sera disponible très prochainement. Merci de votre générosité et de votre soutien à la campagne d'Hélène Boudreau pour la mairie de Dieppe.",
     "back_btn": "Retour au site"
   }
 }

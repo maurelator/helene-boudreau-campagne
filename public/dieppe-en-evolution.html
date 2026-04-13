@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dieppe en Évolution — Plateforme d'Hélène Boudreau pour la mairie de Dieppe 2026">
+<title>Dieppe en Évolution — Hélène Boudreau, Dieppe 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ══ HERO ═══════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="eyebrow reveal">Plateforme électorale</div>
+      <h1 class="page-hero-title reveal">
+        Dieppe <em>en Évolution</em>
+      </h1>
+      <div class="divider reveal"></div>
+      <p class="page-hero-sub reveal">Une vision moderne et ambitieuse pour l'avenir de notre communauté.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTENT PLACEHOLDER ════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="placeholder-box reveal">
+      <div class="placeholder-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <h2 class="placeholder-title">Contenu à venir</h2>
+      <p class="placeholder-text">
+        Hélène Boudreau présentera bientôt sa vision pour <strong>Dieppe en Évolution</strong> — un plan tourné vers l'avenir pour une ville moderne, durable et innovante.
+      </p>
+      <p class="placeholder-text">
+        Cette section détaillera les priorités en matière d'infrastructure, de développement économique, d'environnement et de technologies au service des citoyens.
+      </p>
+      <a href="/" class="btn btn-primary" style="margin-top:1.5rem;">Retour à l'accueil</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Hélène <em>Boudreau</em></div>
+        <div class="footer-brand-sub">Candidate — Mairie de Dieppe 2026</div>
+        <p class="footer-brand-p">Une communauté forte commence par une représentation enracinée dans l'expérience et l'écoute.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="nav.about">À propos</div>
+        <a href="/#about" data-i18n="nav.about">À propos</a>
+        <a href="/communaute.html#distinction" data-i18n="nav.distinction">Distinctions</a>
+        <a href="/communaute.html#community" data-i18n="nav.community">Engagement</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="nav.programme">Plateforme</div>
+        <a href="/#programme" data-i18n="nav.programme">Plateforme</a>
+        <a href="/dieppe-en-action.html">Dieppe en Action</a>
+        <a href="/dieppe-en-sante.html">Dieppe en Santé</a>
+        <a href="/dieppe-en-evolution.html">Dieppe en Évolution</a>
+        <a href="/logement.html">Logement</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Campagne</div>
+        <a href="/benevoles.html" data-i18n="nav.volunteer">Bénévoles</a>
+        <a href="/contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="mailto:dieppevotehelene@gmail.com">dieppevotehelene@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hélène Boudreau. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+      <a href="https://www.facebook.com/share/17TM7ip9wx/?mibextid=wwXIfr" target="_blank" rel="noopener" class="footer-fb">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Suivre sur Facebook
+      </a>
+      <span data-i18n="footer.financed">Financé par le comité de campagne — Dieppe, N.-B.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ JAVASCRIPT ════════════════════════════ -->
+<script src="/navbar.js"></script>
+<script>
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+</body>
+</html>

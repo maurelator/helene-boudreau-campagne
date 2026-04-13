@@ -15,7 +15,7 @@
   },
   "hero": {
     "badge": "Municipal Election · Dieppe 2026",
-    "role": "Candidate for City Council — District 4",
+    "role": "Candidate for Mayor of Dieppe",
     "slogan": "Dieppe, built on trust.",
     "sub": "A strong community starts with representation rooted in experience, listening, and action.",
     "cta_prog": "See the Platform",
@@ -47,33 +47,27 @@
     "items": [
       {
         "num": "01",
-        "title": "Safety",
-        "text": "Strengthen community policing, modernize emergency equipment, and secure public spaces for everyone."
+        "title": "Dieppe in Action",
+        "text": "Coming soon — Hélène Boudreau will share her vision for a dynamic and engaged Dieppe.",
+        "link": "/dieppe-en-action.html"
       },
       {
         "num": "02",
-        "title": "Housing",
-        "text": "Accelerate construction of affordable housing, revise zoning policies, and support homeownership for families."
+        "title": "Dieppe in Health",
+        "text": "Coming soon — Concrete commitments for the well-being and health of Dieppe residents.",
+        "link": "/dieppe-en-sante.html"
       },
       {
         "num": "03",
-        "title": "Transportation",
-        "text": "Develop a modern public transit network and promote sustainable mobility across Greater Moncton."
+        "title": "Dieppe in Evolution",
+        "text": "Coming soon — A modern and ambitious vision for the future of our community.",
+        "link": "/dieppe-en-evolution.html"
       },
       {
         "num": "04",
-        "title": "Environment",
-        "text": "Protect green spaces, modernize water and sewer infrastructure, and build a sustainable city for future generations."
-      },
-      {
-        "num": "05",
-        "title": "Accessibility",
-        "text": "Ensure that public spaces and municipal services are fully accessible to people with special needs."
-      },
-      {
-        "num": "06",
-        "title": "Communication",
-        "text": "Create a citizen forum to keep residents informed about neighbourhood projects and strengthen council–citizen dialogue."
+        "title": "Housing",
+        "text": "Accelerate construction of affordable housing, revise zoning policies, and support homeownership for families.",
+        "link": "/logement.html"
       }
     ]
   },
@@ -175,7 +169,7 @@
     "h1_a": "Support the",
     "h1_em": "campaign",
     "badge": "Coming Soon",
-    "sub": "The online donation form will be available very soon. Thank you for your generosity and support for Hélène Boudreau's campaign for District 4 of Dieppe.",
+    "sub": "The online donation form will be available very soon. Thank you for your generosity and support for Hélène Boudreau's campaign for Mayor of Dieppe.",
     "back_btn": "Back to site"
   }
 }
