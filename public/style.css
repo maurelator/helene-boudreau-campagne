@@ -542,7 +542,19 @@ a { text-decoration: none; color: inherit; }
 .prog-card-body { padding:1.8rem 1.8rem 1.2rem; }
 .prog-card-icon { color:var(--forest-pale); margin-bottom:1rem; }
 .prog-card-title { font-family:var(--font-display); font-size:1.25rem; color:var(--night); margin-bottom:0.7rem; }
-.prog-card-text { font-size:0.86rem; line-height:1.78; color:var(--text-mid); }
+.prog-card-text { font-size:0.86rem; line-height:1.78; color:var(--text-mid); margin-bottom:0.8rem; }
+.prog-card-points {
+  list-style:none; padding:0; margin:0 0 0.4rem;
+}
+.prog-card-points li {
+  font-size:0.82rem; line-height:1.6; color:var(--text-mid);
+  padding:0.22rem 0 0.22rem 1.1rem; position:relative;
+}
+.prog-card-points li::before {
+  content:""; position:absolute; left:0; top:0.65rem;
+  width:5px; height:5px; border-radius:50%;
+  background:var(--forest-pale);
+}
 .prog-card-foot {
   padding:1rem 1.8rem; border-top:1px solid var(--cream);
   font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
@@ -904,6 +916,117 @@ footer { background:var(--night); padding:4.5rem 0 2rem; }
   color: rgba(255,255,255,0.7);
   line-height: 1.6;
   margin-top: 1.5rem;
+}
+
+/* ── Hero bannière split (texte gauche / image droite) ── */
+.page-hero-banner {
+  display: flex;
+  min-height: 420px;
+}
+.page-hero-banner-content {
+  flex: 1;
+  min-width: 0;
+  background: linear-gradient(135deg, var(--night) 0%, var(--forest-mid) 100%);
+  display: flex;
+  align-items: center;
+  padding: 9rem 0 4rem;
+}
+.page-hero-banner-content .eyebrow { color: rgba(168,200,232,0.65); }
+.page-hero-banner-content .page-hero-title { text-align: left; margin: 0.6rem 0; }
+.page-hero-banner-content .divider { background: var(--forest-pale); margin: 1rem 0; }
+.page-hero-banner-content .page-hero-sub { margin-top: 0; }
+.page-hero-banner-img {
+  width: 42%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.page-hero-banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 900px) {
+  .page-hero-banner { flex-direction: column; }
+  .page-hero-banner-content { padding: 9rem 0 3rem; }
+  .page-hero-banner-img { width: 100%; height: 240px; }
+}
+
+/* ── Bannière carte Dieppe (header strip) ── */
+.page-map-banner {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.page-map-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.page-map-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15,30,43,0.78) 0%, rgba(15,30,43,0.3) 55%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.8rem 2.5rem;
+}
+.page-map-banner-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.02em;
+}
+
+/* ── Calendrier de campagne ── */
+.cal-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1rem; }
+@media (max-width: 768px) { .cal-wrap { grid-template-columns: 1fr; } }
+.cal-month { margin-bottom: 0; }
+.cal-month-header {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 400;
+  color: var(--night); margin-bottom: 1.4rem;
+  padding-bottom: 0.8rem; border-bottom: 2px solid var(--cream);
+}
+.cal-month-header em { font-style: italic; color: var(--forest-pale); margin-left: 0.3rem; }
+.cal-events { display: flex; flex-direction: column; gap: 0.65rem; }
+.cal-event {
+  display: flex; gap: 1.1rem; align-items: flex-start;
+  background: #fff; border: 1px solid rgba(26,45,74,0.07);
+  border-radius: var(--radius-md); padding: 0.95rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(15,30,43,0.04);
+  transition: box-shadow 0.2s;
+}
+.cal-event:hover { box-shadow: 0 4px 16px rgba(15,30,43,0.1); }
+.cal-event-date {
+  min-width: 50px; text-align: center; flex-shrink: 0;
+  background: var(--night); border-radius: var(--radius-sm);
+  padding: 0.5rem 0.35rem; color: #fff;
+}
+.cal-event-day { display: block; font-size: 1.35rem; font-weight: 700; line-height: 1; }
+.cal-event-dow { display: block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+.cal-event-body { flex: 1; min-width: 0; }
+.cal-event-tag {
+  display: inline-block; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.18rem 0.55rem; border-radius: 100px; margin-bottom: 0.3rem;
+}
+.cal-tag-reunion { background: rgba(42,80,128,0.12); color: var(--forest-light); }
+.cal-tag-media   { background: rgba(74,122,170,0.15); color: var(--forest-pale); }
+.cal-tag-vote    { background: rgba(180,30,30,0.11); color: #b41e1e; }
+.cal-tag-visite  { background: rgba(60,120,50,0.13); color: #3c7832; }
+.cal-tag-pending { background: rgba(0,0,0,0.06); color: var(--text-muted); }
+.cal-event-title { font-family: var(--font-display); font-size: 0.97rem; color: var(--night); margin-bottom: 0.15rem; }
+.cal-event-note  { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; }
+.cal-event-vote .cal-event-date { background: #b41e1e; }
+.cal-event-vote { border-left: 3px solid #b41e1e; }
+@media (max-width: 640px) {
+  .cal-event { gap: 0.7rem; padding: 0.8rem 0.9rem; }
+  .cal-event-day { font-size: 1.1rem; }
 }
 
 .placeholder-box {

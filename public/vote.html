@@ -199,13 +199,35 @@ body {
   .content-section { padding: 3.5rem 0; }
   .card { padding: 1.8rem; }
 }
+.map-banner {
+  position: relative; height: 180px; overflow: hidden; margin-top: 72px;
+}
+.map-banner img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+}
+.map-banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(15,30,43,0.8) 0%, rgba(15,30,43,0.35) 60%, transparent 100%);
+  display: flex; align-items: flex-end; padding: 1.5rem 2.5rem;
+}
+.map-banner-label {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.3rem; color: rgba(255,255,255,0.82);
+}
 </style>
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<section class="hero-vote">
+<div class="map-banner">
+  <img src="/images/carteDieppe.jpg" alt="Dieppe, Nouveau-Brunswick">
+  <div class="map-banner-overlay">
+    <span class="map-banner-label">Dieppe, Nouveau-Brunswick</span>
+  </div>
+</div>
+
+<section class="hero-vote" style="margin-top:0;">
   <div class="container">
     <div class="hero-vote-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">

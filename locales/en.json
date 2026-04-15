@@ -26,12 +26,12 @@
   "about": {
     "eyebrow": "About Hélène",
     "title": "A life dedicated\nto her community",
-    "p1": "Hélène Boudreau has been a registered nurse for over 22 years and a committed resident of Dieppe. Her professional journey has taught her the importance of listening, rigour, and compassion — values she naturally brings to her civic engagement.",
-    "p2": "A volunteer with the Carnaval de l'Amitié, the Aquatic Centre, and Chair of the Maison Nazareth Board of Directors, she knows intimately the strengths and challenges of our region.",
+    "p1": "A registered nurse, Hélène dedicated 20 years to patient care in the public sector, primarily at the Dr. Richard Léon-Richard Oncology Centre. She then transitioned to clinical trials, spending 21 years in the private sector as a Senior Clinical Research Associate II, working on provincial, national, and international projects focused on patient safety and data integrity.",
+    "p2": "A former Dieppe city councillor (2008-2012) and Vice-President of the Association of Municipalities of New Brunswick, she has over 25 years of volunteer service across numerous local committees — in economic development, cultural promotion, and recreational projects such as the Dieppe Aquatic Centre and the Rotary Pavilion St-Anselme renovation.",
     "tag1": "Nurse · 22 years of experience",
-    "tag2": "Board Chair — Maison Nazareth",
-    "tag3": "Community volunteer",
-    "tag4": "Accessibility advocate",
+    "tag2": "22+ years serving our community",
+    "tag3": "4 key priorities",
+    "tag4": "City Councillor 2008-2012",
     "years_num": "22+",
     "years_label": "Years serving\nour community"
   },
@@ -48,25 +48,49 @@
       {
         "num": "01",
         "title": "Dieppe in Action",
-        "text": "Coming soon — Hélène Boudreau will share her vision for a dynamic and engaged Dieppe.",
+        "text": "A city that drives its own growth: mobility, partnerships, and participatory democracy.",
+        "points": [
+          "Permanent public-private forum with the business community",
+          "Revised Codiac Transpo routes for peak-hour frequency",
+          "Widening of the Harrisville Bridge to 4 lanes",
+          "Neighbourhood committees for citizen-driven solutions"
+        ],
         "link": "/dieppe-en-action.html"
       },
       {
         "num": "02",
         "title": "Dieppe in Health",
-        "text": "Coming soon — Concrete commitments for the well-being and health of Dieppe residents.",
+        "text": "Protecting Acadian identity, the environment, and the well-being of residents.",
+        "points": [
+          "Dieppe as a leader for French-language communities in N.B.",
+          "Urban Forestry Plan 2026-2030",
+          "Green buffer zones to reduce airport and railway noise",
+          "Construction of a new eco-friendly arena"
+        ],
         "link": "/dieppe-en-sante.html"
       },
       {
         "num": "03",
         "title": "Dieppe in Evolution",
-        "text": "Coming soon — A modern and ambitious vision for the future of our community.",
+        "text": "Rigorous financial management for a sustainable and transparent future.",
+        "points": [
+          "Debt ratio maintained below 20%",
+          "Pressure for new French and English schools",
+          "Modernization of water and sewer systems",
+          "Digital transformation of municipal services"
+        ],
         "link": "/dieppe-en-evolution.html"
       },
       {
         "num": "04",
         "title": "Housing",
-        "text": "Accelerate construction of affordable housing, revise zoning policies, and support homeownership for families.",
+        "text": "Accessible and safe housing for families and seniors.",
+        "points": [
+          "Incentives for developers to include affordable units",
+          "Faster building permit processing",
+          "High standards for sustainable construction",
+          "New fire station and improved public lighting"
+        ],
         "link": "/logement.html"
       }
     ]
@@ -96,6 +120,8 @@
     "roles": [
       { "title": "Phone Banking", "desc": "Contact voters from the comfort of your home" },
       { "title": "Door-to-Door", "desc": "Meet residents in their neighbourhoods" },
+      { "title": "Polling Station", "desc": "Represent the campaign at voting locations" },
+      { "title": "Material Distribution", "desc": "Distribute flyers and posters across the city" },
       { "title": "Campaign Office", "desc": "Administrative and logistical support" },
       { "title": "Events", "desc": "Help organize and animate campaign activities" }
     ],

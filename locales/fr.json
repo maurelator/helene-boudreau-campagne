@@ -26,12 +26,12 @@
   "about": {
     "eyebrow": "À propos d'Hélène",
     "title": "Une vie au service\nde sa communauté",
-    "p1": "Hélène Boudreau est infirmière depuis plus de 22 ans et résidente engagée de Dieppe. Son parcours professionnel lui a appris l'importance de l'écoute, de la rigueur et de la compassion — des valeurs qu'elle transpose naturellement dans son engagement civique.",
-    "p2": "Bénévole au sein du Carnaval de l'Amitié, du Centre aquatique et présidente du conseil d'administration de la Maison Nazareth, elle connaît intimement les forces et les défis de notre région.",
+    "p1": "Infirmière diplômée d'État, Hélène a consacré 20 ans aux soins aux patients dans le secteur public, principalement au Centre d'oncologie Dr Richard Léon-Richard. Elle s'est ensuite orientée vers les essais cliniques, passant 21 ans dans le secteur privé en tant qu'associée principale de recherche clinique II, avec des projets provinciaux, nationaux et internationaux axés sur la sécurité des patients et l'intégrité des données.",
+    "p2": "Ancienne conseillère municipale de Dieppe (2008-2012) et vice-présidente de l'Association des villes du Nouveau-Brunswick, elle compte plus de 25 ans de bénévolat au sein de nombreux comités locaux — développement économique, promotion culturelle et projets récréatifs comme le centre aquatique de Dieppe et la rénovation du Pavillon Rotary St-Anselme.",
     "tag1": "Infirmière · 22 ans d'expérience",
-    "tag2": "Présidente C.A. — Maison Nazareth",
-    "tag3": "Bénévole communautaire",
-    "tag4": "Défense de l'accessibilité",
+    "tag2": "22+ ans au service de notre communauté",
+    "tag3": "4 priorités clés",
+    "tag4": "Conseillère municipale 2008-2012",
     "years_num": "22+",
     "years_label": "Ans au service\nde notre communauté"
   },
@@ -48,25 +48,49 @@
       {
         "num": "01",
         "title": "Dieppe en Action",
-        "text": "Contenu à venir — Hélène Boudreau partagera sa vision pour une Dieppe dynamique et engagée.",
+        "text": "Une ville qui pilote sa croissance : mobilité, partenariats et démocratie participative.",
+        "points": [
+          "Forum permanent public-privé avec le milieu des affaires",
+          "Révision des circuits Codiac Transpo aux heures de pointe",
+          "Élargissement du pont Harrisville à 4 voies",
+          "Comités de quartier pour des solutions citoyennes"
+        ],
         "link": "/dieppe-en-action.html"
       },
       {
         "num": "02",
         "title": "Dieppe en Santé",
-        "text": "Contenu à venir — Des engagements concrets pour le mieux-être et la santé des résidents de Dieppe.",
+        "text": "Protéger l'identité acadienne, l'environnement et le bien-être des citoyens.",
+        "points": [
+          "Dieppe, fer de lance de la francophonie au N.-B.",
+          "Plan de foresterie urbaine 2026-2030",
+          "Zones tampons végétalisées contre les nuisances sonores",
+          "Construction d'un nouvel aréna aux normes écologiques"
+        ],
         "link": "/dieppe-en-sante.html"
       },
       {
         "num": "03",
         "title": "Dieppe en Évolution",
-        "text": "Contenu à venir — Une vision moderne et ambitieuse pour l'avenir de notre communauté.",
+        "text": "Gestion financière rigoureuse pour un avenir durable et transparent.",
+        "points": [
+          "Ratio d'endettement maintenu sous 20%",
+          "Pression pour de nouvelles écoles francophones et anglophones",
+          "Modernisation des systèmes d'eau et d'égouts",
+          "Digitalisation des services aux citoyens"
+        ],
         "link": "/dieppe-en-evolution.html"
       },
       {
         "num": "04",
         "title": "Logement",
-        "text": "Accélérer la construction de logements abordables, réviser le zonage et soutenir l'accès à la propriété pour les familles.",
+        "text": "Des logements accessibles et sécuritaires pour les familles et les aînés.",
+        "points": [
+          "Incitations aux promoteurs pour unités à prix abordables",
+          "Accélération des permis de construire",
+          "Standards élevés de construction durable",
+          "Nouvelle caserne de pompiers et amélioration de l'éclairage public"
+        ],
         "link": "/logement.html"
       }
     ]
@@ -96,6 +120,8 @@
     "roles": [
       { "title": "Appels téléphoniques", "desc": "Contacter les électeurs depuis chez vous" },
       { "title": "Porte-à-porte", "desc": "Rencontrer les résidents dans les quartiers" },
+      { "title": "Bureau de vote", "desc": "Représenter la campagne aux bureaux de scrutin" },
+      { "title": "Distribution de matériel", "desc": "Distribuer des dépliants et affiches dans la ville" },
       { "title": "Bureau de campagne", "desc": "Soutien administratif et logistique" },
       { "title": "Événements", "desc": "Animation et organisation d'activités" }
     ],

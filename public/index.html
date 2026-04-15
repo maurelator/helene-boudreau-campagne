@@ -134,7 +134,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-    <div><span class="stat-num">3</span><div class="stat-lbl">Priorités clés</div></div>
+    <div><span class="stat-num">4</span><div class="stat-lbl">Priorités clés</div></div>
   </div>
   <div class="stat-item">
     <div class="stat-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
@@ -165,10 +165,9 @@
       </div>
       <div class="about-images reveal from-right">
         <div class="about-img-grid">
-          <!-- Images de Dieppe / Hôtel de ville -->
-          <img src="images/hotelVille.png" alt="Hôtel de Ville de Dieppe" class="about-img about-img-a">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80" alt="Bureaux" class="about-img about-img-b">
-          <img src="https://images.unsplash.com/photo-1441441247730-d09529166668?w=500&q=80" alt="Parc" class="about-img about-img-c">
+          <img src="images/heleneApropos1.jpeg" alt="Hélène Boudreau" class="about-img about-img-a">
+          <img src="images/heleneApropos2.jpeg" alt="Hélène Boudreau en action" class="about-img about-img-b">
+          <img src="images/hotelVille.png" alt="Hôtel de Ville de Dieppe" class="about-img about-img-c">
         </div>
         <div class="about-badge">
           <div class="about-badge-num" data-i18n="about.years_num">22+</div>
@@ -294,10 +293,10 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 // ── Render programme ───────────────────────
 const PROG_IMAGES = [
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80',
-  'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-  'https://images.unsplash.com/photo-1441441247730-d09529166668?w=600&q=80'
+  '/images/DieppeAction.jpg',
+  '/images/DieppeSante.jpg',
+  '/images/dieppeEvolution.avif',
+  '/images/logements.jpg'
 ];
 const PROG_ICONS = [
   '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
@@ -319,6 +318,7 @@ function renderProgramme() {
         <div class="prog-card-icon">${PROG_ICONS[i]}</div>
         <h3 class="prog-card-title">${item.title}</h3>
         <p class="prog-card-text">${item.text}</p>
+        ${Array.isArray(item.points) ? `<ul class="prog-card-points">${item.points.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
       </div>
       <div class="prog-card-foot">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
