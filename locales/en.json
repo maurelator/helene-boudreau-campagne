@@ -47,51 +47,39 @@
     "items": [
       {
         "num": "01",
-        "title": "Dieppe in Action",
-        "text": "A city that drives its own growth: mobility, partnerships, and participatory democracy.",
-        "points": [
-          "Permanent public-private forum with the business community",
-          "Revised Codiac Transpo routes for peak-hour frequency",
-          "Widening of the Harrisville Bridge to 4 lanes",
-          "Neighbourhood committees for citizen-driven solutions"
-        ],
-        "link": "/dieppe-en-action.html"
-      },
-      {
-        "num": "02",
         "title": "Dieppe in Health",
-        "text": "Protecting Acadian identity, the environment, and the well-being of residents.",
+        "text": "Language, culture, well-being, and public safety at the heart of every decision.",
         "points": [
-          "Dieppe as a leader for French-language communities in N.B.",
-          "Urban Forestry Plan 2026-2030",
-          "Green buffer zones to reduce airport and railway noise",
-          "Construction of a new eco-friendly arena"
+          "Dieppe as a French-language leader and library expansion",
+          "Noise pollution committee by end of 2027 and green landscaping",
+          "PARTICIPACTION partnership for active living at all ages",
+          "Strengthen public safety in collaboration with the RCMP"
         ],
         "link": "/dieppe-en-sante.html"
       },
       {
-        "num": "03",
-        "title": "Dieppe in Evolution",
-        "text": "Rigorous financial management for a sustainable and transparent future.",
+        "num": "02",
+        "title": "Dieppe in Action",
+        "text": "Economy, affordable housing, and living spaces: a city in motion.",
         "points": [
-          "Debt ratio maintained below 20%",
-          "Pressure for new French and English schools",
-          "Modernization of water and sewer systems",
-          "Digital transformation of municipal services"
+          "Expand Expansion Dieppe's mandate toward innovative sectors (biotech, AI)",
+          "Achieve a 60% residential / 40% non-residential ratio by 2030",
+          "Double the number of affordable housing units in Dieppe",
+          "Expand the Dieppe Market — a permanent community gathering place"
         ],
-        "link": "/dieppe-en-evolution.html"
+        "link": "/dieppe-en-action.html"
       },
       {
-        "num": "04",
-        "title": "Housing",
-        "text": "Accessible and safe housing for families and seniors.",
+        "num": "03",
+        "title": "Dieppe in Evolution",
+        "text": "An educated, diverse, and green city, ready for the future.",
         "points": [
-          "Incentives for developers to include affordable units",
-          "Faster building permit processing",
-          "High standards for sustainable construction",
-          "New fire station and improved public lighting"
+          "Healthy aging — a permanent space for seniors",
+          "Expand the electric public bus fleet",
+          "Increase green spaces in every neighbourhood of Dieppe",
+          "Spaces that build collective pride and a sense of belonging"
         ],
-        "link": "/logement.html"
+        "link": "/dieppe-en-evolution.html"
       }
     ]
   },

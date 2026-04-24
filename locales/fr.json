@@ -47,51 +47,39 @@
     "items": [
       {
         "num": "01",
-        "title": "Dieppe en Action",
-        "text": "Une ville qui pilote sa croissance : mobilité, partenariats et démocratie participative.",
-        "points": [
-          "Forum permanent public-privé avec le milieu des affaires",
-          "Révision des circuits Codiac Transpo aux heures de pointe",
-          "Élargissement du pont Harrisville à 4 voies",
-          "Comités de quartier pour des solutions citoyennes"
-        ],
-        "link": "/dieppe-en-action.html"
-      },
-      {
-        "num": "02",
         "title": "Dieppe en Santé",
-        "text": "Protéger l'identité acadienne, l'environnement et le bien-être des citoyens.",
+        "text": "Langue, culture, bien-être et sécurité publique au cœur de chaque décision.",
         "points": [
-          "Dieppe, fer de lance de la francophonie au N.-B.",
-          "Plan de foresterie urbaine 2026-2030",
-          "Zones tampons végétalisées contre les nuisances sonores",
-          "Construction d'un nouvel aréna aux normes écologiques"
+          "Dieppe, fer de lance de la francophonie et agrandissement de la bibliothèque",
+          "Comité contre la pollution sonore d'ici fin 2027 et aménagement vert",
+          "Partenariat PARTICIPACTION pour une vie active à tous les âges",
+          "Renforcer la sécurité publique en collaboration avec la GRC"
         ],
         "link": "/dieppe-en-sante.html"
       },
       {
-        "num": "03",
-        "title": "Dieppe en Évolution",
-        "text": "Gestion financière rigoureuse pour un avenir durable et transparent.",
+        "num": "02",
+        "title": "Dieppe en Action",
+        "text": "Économie, logement abordable et espaces de vie : une ville en mouvement.",
         "points": [
-          "Ratio d'endettement maintenu sous 20%",
-          "Pression pour de nouvelles écoles francophones et anglophones",
-          "Modernisation des systèmes d'eau et d'égouts",
-          "Digitalisation des services aux citoyens"
+          "Élargir le mandat d'Expansion Dieppe vers les secteurs innovants (biotech, IA)",
+          "Atteindre un ratio 60 % résidentiel / 40 % non-résidentiel d'ici 2030",
+          "Doubler le nombre de logements abordables à Dieppe",
+          "Agrandir le Marché de Dieppe — un lieu rassembleur permanent"
         ],
-        "link": "/dieppe-en-evolution.html"
+        "link": "/dieppe-en-action.html"
       },
       {
-        "num": "04",
-        "title": "Logement",
-        "text": "Des logements accessibles et sécuritaires pour les familles et les aînés.",
+        "num": "03",
+        "title": "Dieppe en Évolution",
+        "text": "Une ville éduquée, diversifiée et verte, prête pour l'avenir.",
         "points": [
-          "Incitations aux promoteurs pour unités à prix abordables",
-          "Accélération des permis de construire",
-          "Standards élevés de construction durable",
-          "Nouvelle caserne de pompiers et amélioration de l'éclairage public"
+          "Vieillissement en santé — espace permanent pour les aîné.e.s",
+          "Augmenter la flotte d'autobus électrique publique",
+          "Augmenter les espaces verts dans chaque quartier de Dieppe",
+          "Des lieux qui renforcent la fierté collective et le sentiment d'appartenance"
         ],
-        "link": "/logement.html"
+        "link": "/dieppe-en-evolution.html"
       }
     ]
   },
