@@ -5,8 +5,20 @@ const fs      = require('fs');
 const path    = require('path');
 const DB      = path.join(__dirname, '../data/db.json');
 
-const read  = ()    => JSON.parse(fs.readFileSync(DB, 'utf8'));
-const write = data  => fs.writeFileSync(DB, JSON.stringify(data, null, 2));
+const DEFAULT_DB = { actualites: [], benevoles: [], messages: [], galerie: [], config: {
+  slogan_fr: 'Dieppe, bâtie sur la confiance.',
+  slogan_en: 'Dieppe, built on trust.',
+  email_contact: 'dieppevotehelene@gmail.com',
+  telephone: '', facebook: '#', twitter: '#', instagram: '#', photo_candidate: ''
+}};
+const read  = () => {
+  try { return JSON.parse(fs.readFileSync(DB, 'utf8')); }
+  catch { return JSON.parse(JSON.stringify(DEFAULT_DB)); }
+};
+const write = data => {
+  fs.mkdirSync(path.dirname(DB), { recursive: true });
+  fs.writeFileSync(DB, JSON.stringify(data, null, 2));
+};
 const newId = arr   => arr.length ? Math.max(...arr.map(i => i.id)) + 1 : 1;
 const today = ()    => new Date().toISOString().split('T')[0];
 
@@ -38,8 +50,9 @@ router.post('/benevole', async (req, res) => {
   try {
     const mailer = req.app.get('mailer');
     await mailer.sendMail({
-      from: '"Campagne Hélène Boudreau" <dieppevotehelene@gmail.com>',
-      to:   'dieppevotehelene@gmail.com',
+      from:    '"Campagne Hélène Boudreau" <dieppevotehelene@gmail.com>',
+      to:      'dieppevotehelene@gmail.com',
+      replyTo: entry.email,
       subject: `Nouveau bénévole : ${entry.nom}`,
       html: `
         <h2 style="color:#1b3a2d;">Nouvelle inscription bénévole</h2>
@@ -80,8 +93,9 @@ router.post('/contact', async (req, res) => {
   try {
     const mailer = req.app.get('mailer');
     await mailer.sendMail({
-      from: '"Site Campagne" <dieppevotehelene@gmail.com>',
-      to:   'dieppevotehelene@gmail.com',
+      from:    '"Site Campagne" <dieppevotehelene@gmail.com>',
+      to:      'dieppevotehelene@gmail.com',
+      replyTo: entry.email,
       subject: `Message : ${entry.sujet} — ${entry.nom}`,
       html: `
         <h2 style="color:#1b3a2d;">Nouveau message de contact</h2>

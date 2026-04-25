@@ -276,15 +276,29 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 // ── Contact form ───────────────────────────
 async function submitContact(e) {
   e.preventDefault();
-  const inputs = e.target.querySelectorAll('input,select,textarea');
-  const body = {};
-  inputs.forEach(i => { if (i.name) body[i.name] = i.value; });
-  try {
-    await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-  } catch {}
-  e.target.reset();
+  const btn = e.target.querySelector('button[type="submit"]');
   const lang = window.currentLang || 'fr';
-  alert(lang === 'fr' ? 'Message envoyé ! Merci.' : 'Message sent! Thank you.');
+  const fd = new FormData(e.target);
+  const body = Object.fromEntries(fd.entries());
+  btn.disabled = true;
+  btn.textContent = lang === 'fr' ? 'Envoi en cours…' : 'Sending…';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) throw new Error('server_error');
+    e.target.reset();
+    alert(lang === 'fr' ? 'Message envoyé ! Merci.' : 'Message sent! Thank you.');
+  } catch {
+    alert(lang === 'fr'
+      ? 'Erreur lors de l\'envoi. Veuillez réessayer ou écrire directement à dieppevotehelene@gmail.com'
+      : 'Error sending message. Please try again or email dieppevotehelene@gmail.com directly.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = lang === 'fr' ? 'Envoyer' : 'Send';
+  }
 }
 
 </script>

@@ -154,16 +154,27 @@ function renderVolRoles() {
 // ── Volunteer form submit ──────────────────
 async function submitVolunteer(e) {
   e.preventDefault();
+  const lang = window.currentLang || 'fr';
+  const btn = e.target.querySelector('button[type="submit"]');
   const fd = new FormData(e.target);
   const body = Object.fromEntries(fd.entries());
+  btn.disabled = true;
+  btn.textContent = lang === 'fr' ? 'Envoi en cours…' : 'Sending…';
   try {
-    await fetch('/api/benevole', {
+    const res = await fetch('/api/benevole', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify(body)
     });
-  } catch {}
-  document.getElementById('volForm').style.display = 'none';
-  document.getElementById('volSuccess').style.display = 'block';
+    if (!res.ok) throw new Error('server_error');
+    document.getElementById('volForm').style.display = 'none';
+    document.getElementById('volSuccess').style.display = 'block';
+  } catch {
+    btn.disabled = false;
+    btn.textContent = lang === 'fr' ? 'Je m\'engage' : 'Sign up';
+    alert(lang === 'fr'
+      ? 'Erreur lors de l\'envoi. Veuillez réessayer ou écrire à dieppevotehelene@gmail.com'
+      : 'Error sending. Please try again or email dieppevotehelene@gmail.com.');
+  }
 }
 
 </script>
