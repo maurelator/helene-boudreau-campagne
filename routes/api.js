@@ -54,7 +54,9 @@ router.post('/benevole', async (req, res) => {
         <p style="margin-top:20px;font-size:12px;color:#999;">Gérer depuis <a href="/admin">le panneau admin</a></p>
       `
     });
-  } catch (err) { console.warn('Email non envoyé:', err.message); }
+  } catch (err) {
+    console.error('[BÉNÉVOLE] Erreur envoi email:', err.message);
+  }
 
   res.json({ success: true });
 });
@@ -91,7 +93,9 @@ router.post('/contact', async (req, res) => {
         </table>
       `
     });
-  } catch (err) { console.warn('Email non envoyé:', err.message); }
+  } catch (err) {
+    console.error('[CONTACT] Erreur envoi email:', err.message);
+  }
 
   res.json({ success: true });
 });

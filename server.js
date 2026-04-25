@@ -58,4 +58,16 @@ app.listen(PORT, () => {
   console.log(` 🌐  Site public  →  http://localhost:${PORT}`);
   console.log(` 🔐  Admin        →  http://localhost:${PORT}/admin`);
   console.log(`\n     Login: admin / dieppe2026\n`);
+
+  // Vérification de la connexion SMTP au démarrage
+  mailer.verify((err) => {
+    if (err) {
+      console.error(' ❌  SMTP non connecté :', err.message);
+      console.error('     → Vérifiez GMAIL_USER et GMAIL_PASS dans le fichier .env');
+      console.error('     → GMAIL_PASS doit être un App Password Gmail (16 caractères)');
+      console.error('     → Générez-le sur : myaccount.google.com → Sécurité → Mots de passe des applications');
+    } else {
+      console.log(' 📧  SMTP Gmail connecté — envoi des emails opérationnel\n');
+    }
+  });
 });
